@@ -17,47 +17,25 @@ export default function Collaborations() {
         </p>
       </div>
 
-      <div className="relative mt-14 overflow-hidden [-webkit-mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)] [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
-        <div className="flex w-max motion-reduce:w-full motion-safe:animate-[marquee_40s_linear_infinite] motion-safe:hover:[animation-play-state:paused]">
-          <ul className="flex shrink-0 items-center gap-12 pr-12 motion-reduce:w-full motion-reduce:flex-wrap motion-reduce:justify-center motion-reduce:gap-y-8">
-            {collaborations.map((c) => (
-              <li
-                key={c.name}
-                className="relative h-12 w-28 shrink-0 md:h-14 md:w-32"
-              >
-                <ImageWithFallback
-                  src={c.logo}
-                  alt={c.name}
-                  fallbackSrc="/collaborations/_placeholder.svg"
-                  fill
-                  sizes="128px"
-                  className="object-contain grayscale opacity-70 transition-[filter,opacity] duration-300 hover:grayscale-0 hover:opacity-100"
-                />
-              </li>
-            ))}
-          </ul>
-          <ul
-            aria-hidden="true"
-            className="flex shrink-0 items-center gap-12 pr-12 motion-reduce:hidden"
+      <ul className="mx-auto mt-14 grid max-w-6xl grid-cols-2 gap-6 sm:grid-cols-5">
+        {collaborations.map((c) => (
+          <li
+            key={c.name}
+            className="flex items-center justify-center rounded-2xl border border-navy/10 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
           >
-            {collaborations.map((c) => (
-              <li
-                key={`dup-${c.name}`}
-                className="relative h-12 w-28 shrink-0 md:h-14 md:w-32"
-              >
-                <ImageWithFallback
-                  src={c.logo}
-                  alt=""
-                  fallbackSrc="/collaborations/_placeholder.svg"
-                  fill
-                  sizes="128px"
-                  className="object-contain grayscale opacity-70 transition-[filter,opacity] duration-300 hover:grayscale-0 hover:opacity-100"
-                />
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+            <div className="relative h-20 w-full sm:h-24">
+              <ImageWithFallback
+                src={c.logo}
+                alt={c.name}
+                fallbackSrc="/collaborations/_placeholder.svg"
+                fill
+                sizes="(max-width: 640px) 40vw, 200px"
+                className="object-contain"
+              />
+            </div>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

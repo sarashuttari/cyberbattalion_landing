@@ -41,10 +41,10 @@ export default function Hero() {
           View Highlights
         </a>
         <a
-          href="#about"
+          href="#contact"
           className="rounded-full border border-navy/20 px-8 py-3 text-sm font-semibold text-navy transition-colors hover:border-maroon hover:text-maroon"
         >
-          About
+          Contact
         </a>
       </div>
     </section>

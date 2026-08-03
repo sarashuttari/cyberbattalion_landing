@@ -1,6 +1,12 @@
 # Cyber Battalion — Dr. Sara Shuttari Landing Page
 
-**Status:** Built and verified (build, lint, responsive, a11y). Real workshop/collaboration photos are still placeholder — see each folder's README. Note: `Collaborations` is placed right after `Hero` (before `About`), not between `Highlights` and `Centre of Excellence` as originally drafted below — the user asked for it moved up.
+**Status:** Built and verified (build, lint, responsive, a11y). Real workshop photos are still placeholder — see `public/workshops/README.md`. Collaboration logos are real (see `public/collaborations/README.md`).
+
+Since this was drafted, the user asked for several changes that supersede the sections below — noted here rather than rewritten in place:
+- `Collaborations` sits right after `Hero` (before `About`/`Highlights`), not between `Highlights` and `Centre of Excellence`. It's a simple 5-column, single-row grid of full-color logo cards, not the marquee described below.
+- `About` is a real route (`src/app/about/page.tsx`, using the `About` component) but is currently **unlinked from the Navbar and Hero** ("hidden for now") — reachable only by direct URL.
+- There is **no separate Contact page**. Instead there's a `Contact & Queries` section (`ContactSection.tsx` + `ContactForm.tsx`) as the *last* section on the homepage, directly above the Footer, with a working form (name/email/phone/reason/message) that opens the visitor's email client via a `mailto:` link — this site has no backend, so that's the "no contact form" decision below being reversed without adding one.
+- `Navbar`/`Footer` now live in `src/app/layout.tsx` (not `page.tsx`), since the site is multi-page.
 
 ## Brand & domain
 

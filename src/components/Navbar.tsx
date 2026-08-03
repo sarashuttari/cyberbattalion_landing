@@ -6,10 +6,10 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const links = [
-  { href: "#about", label: "About" },
-  { href: "#highlights", label: "Highlights" },
-  { href: "#collaborations", label: "Collaborations" },
-  { href: "#centre-of-excellence", label: "Centre of Excellence" },
+  { href: "/#highlights", label: "Highlights" },
+  { href: "/#collaborations", label: "Collaborations" },
+  { href: "/#centre-of-excellence", label: "Centre of Excellence" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -42,7 +42,7 @@ export default function Navbar() {
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
         <Link
-          href="#top"
+          href="/"
           className="flex items-center gap-3 shrink-0"
           onClick={() => setOpen(false)}
         >
@@ -62,12 +62,12 @@ export default function Navbar() {
         <ul className="hidden md:flex items-center gap-8">
           {links.map((link) => (
             <li key={link.href}>
-              <a
+              <Link
                 href={link.href}
                 className="text-sm font-medium text-navy/80 transition-colors hover:text-maroon"
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -88,19 +88,19 @@ export default function Navbar() {
         id="mobile-menu"
         inert={!open}
         className={`md:hidden overflow-hidden transition-[max-height,opacity] duration-300 ease-in-out ${
-          open ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
+          open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <ul className="flex flex-col gap-1 border-t border-navy/10 bg-bg/95 px-6 py-4 backdrop-blur-md">
           {links.map((link) => (
             <li key={link.href}>
-              <a
+              <Link
                 href={link.href}
                 className="block rounded-md px-2 py-2.5 text-sm font-medium text-navy/80 hover:bg-navy/5 hover:text-maroon"
                 onClick={() => setOpen(false)}
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
