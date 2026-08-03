@@ -16,6 +16,13 @@ export default function Hero() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10"
       >
+        <Image
+          src="/bg.svg"
+          alt=""
+          fill
+          priority
+          className="object-cover opacity-70"
+        />
         <div className="absolute left-1/2 top-0 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-maroon/10 blur-3xl" />
         <div className="absolute right-[10%] top-1/3 h-56 w-56 rounded-full bg-gold/15 blur-3xl" />
         <div className="absolute left-[8%] bottom-0 h-64 w-64 rounded-full bg-navy/5 blur-3xl" />
