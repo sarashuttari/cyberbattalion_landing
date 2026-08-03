@@ -22,13 +22,13 @@ export default function ContactSection() {
         <div className="mt-14 grid gap-10 lg:grid-cols-[1fr_2fr]">
           <div className="space-y-4">
             <a
-              href="mailto:info@cyberbattalio.in"
+              href="mailto:info@cyberbattalion.in"
               className="flex items-center gap-3 rounded-xl border border-navy/10 bg-white px-5 py-4 text-sm text-navy/80 shadow-sm transition-colors hover:border-maroon/30 hover:text-maroon"
             >
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-maroon/10 text-maroon">
                 <Mail size={16} aria-hidden="true" />
               </span>
-              info@cyberbattalio.in
+              info@cyberbattalion.in
             </a>
             <a
               href="tel:+918919850920"

@@ -22,11 +22,11 @@ export default function Footer() {
 
         <div className="mt-1 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs text-muted">
           <a
-            href="mailto:info@cyberbattalio.in"
+            href="mailto:info@cyberbattalion.in"
             className="inline-flex items-center gap-1.5 transition-colors hover:text-maroon"
           >
             <Mail size={14} aria-hidden="true" />
-            info@cyberbattalio.in
+            info@cyberbattalion.in
           </a>
           <a
             href="tel:+918919850920"

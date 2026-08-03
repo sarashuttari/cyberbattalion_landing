@@ -20,7 +20,7 @@ const description =
   "Cybersecurity & Information Technology Professional. Knowledge, Awareness, Protection.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://cyberbetallion.com"),
+  metadataBase: new URL("https://cyberbattalion.in"),
   title,
   description,
   openGraph: {
@@ -48,6 +48,10 @@ export default function RootLayout({
       className={`${fraunces.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-bg font-sans text-navy">
+        <div
+          aria-hidden="true"
+          className="h-1.5 w-full bg-gradient-to-r from-maroon via-gold to-maroon"
+        />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

@@ -1,50 +1,15 @@
 "use client";
 
-import {
-  BookOpen,
-  ChevronDown,
-  Globe2,
-  Newspaper,
-  Target,
-} from "lucide-react";
-import type { LucideIcon } from "lucide-react";
+import { BookOpen, ChevronDown, Handshake } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import WorkshopsPanel from "./WorkshopsPanel";
-
-type Card = {
-  icon: LucideIcon;
-  title: string;
-  subtitle: string;
-};
-
-const staticCards: Card[] = [
-  {
-    icon: BookOpen,
-    title: "FDPs",
-    subtitle: "Faculty Development Programs",
-  },
-  {
-    icon: Globe2,
-    title: "Research",
-    subtitle: "Presented at National & International Conferences",
-  },
-  {
-    icon: Newspaper,
-    title: "100+ Urdu Articles",
-    subtitle: "On Information Technology in Siasat Daily",
-  },
-  {
-    icon: Target,
-    title: "Expertise",
-    subtitle: "Cybersecurity, AI, IT & Industry–Academia Collaboration",
-  },
-];
 
 const cardClass =
   "flex flex-col items-start gap-4 rounded-2xl border border-navy/10 bg-white p-6 text-left shadow-sm";
 
 export default function Highlights() {
   const [open, setOpen] = useState(false);
+  const [projectsOpen, setProjectsOpen] = useState(false);
   const panelWrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -71,7 +36,7 @@ export default function Highlights() {
           At a Glance
         </h2>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid items-start gap-6 sm:grid-cols-2">
           <button
             type="button"
             aria-expanded={open}
@@ -98,19 +63,83 @@ export default function Highlights() {
             </span>
           </button>
 
-          {staticCards.map(({ icon: Icon, title, subtitle }) => (
-            <div key={title} className={cardClass}>
-              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-maroon/10 text-maroon">
-                <Icon size={20} aria-hidden="true" />
+          <div className={cardClass}>
+            <span className="flex h-11 w-11 items-center justify-center rounded-full bg-maroon/10 text-maroon">
+              <Handshake size={20} aria-hidden="true" />
+            </span>
+            <div>
+              <p className="font-serif text-xl font-semibold text-navy">
+                Internship &amp; Placements
+              </p>
+              <p className="mt-1 text-sm text-muted">
+                Guidance and placement assistance bridging students into
+                industry roles
+              </p>
+            </div>
+          </div>
+
+          <div className={cardClass}>
+            <button
+              type="button"
+              aria-expanded={projectsOpen}
+              aria-controls="projects-detail"
+              onClick={() => setProjectsOpen((v) => !v)}
+              className="flex w-full flex-col items-start gap-4 text-left focus-visible:outline-none"
+            >
+              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-maroon text-white">
+                <ChevronDown
+                  size={20}
+                  className={`transition-transform duration-300 ${projectsOpen ? "rotate-180" : ""}`}
+                />
               </span>
               <div>
                 <p className="font-serif text-xl font-semibold text-navy">
-                  {title}
+                  Projects
                 </p>
-                <p className="mt-1 text-sm text-muted">{subtitle}</p>
+                <p className="mt-1 text-sm text-muted">
+                  Hands-on student &amp; industry projects in Cybersecurity,
+                  AI and IT
+                </p>
+              </div>
+              <span className="text-sm font-semibold text-maroon">
+                {projectsOpen ? "Hide project details" : "View project details"}
+              </span>
+            </button>
+
+            <div
+              className={`grid w-full transition-[grid-template-rows] duration-300 ease-in-out ${
+                projectsOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+              }`}
+            >
+              <div id="projects-detail" inert={!projectsOpen} className="overflow-hidden">
+                <p className="pt-1 text-sm leading-relaxed text-navy/80">
+                  From student capstone work to industry-sponsored
+                  initiatives — real cybersecurity, AI, and IT projects, with
+                  pathways into the upcoming Centre of Excellence.
+                </p>
+                <a
+                  href="#contact"
+                  className="mt-4 inline-flex items-center gap-2 rounded-full bg-maroon px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-maroon-dark"
+                >
+                  Register Now
+                </a>
               </div>
             </div>
-          ))}
+          </div>
+
+          <div className={cardClass}>
+            <span className="flex h-11 w-11 items-center justify-center rounded-full bg-maroon/10 text-maroon">
+              <BookOpen size={20} aria-hidden="true" />
+            </span>
+            <div>
+              <p className="font-serif text-xl font-semibold text-navy">
+                FDPs
+              </p>
+              <p className="mt-1 text-sm text-muted">
+                Faculty Development Programs
+              </p>
+            </div>
+          </div>
         </div>
 
         <div

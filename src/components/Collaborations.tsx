@@ -3,9 +3,15 @@ import ImageWithFallback from "./ImageWithFallback";
 
 export default function Collaborations() {
   return (
-    <section id="collaborations" className="px-6 py-20 sm:py-28">
+    <section
+      id="collaborations"
+      className="border-y border-gold/20 bg-gradient-to-b from-gold/[0.07] via-maroon/[0.02] to-transparent px-6 py-20 sm:py-28"
+    >
       <div className="mx-auto max-w-5xl text-center">
-        <h2 className="font-serif text-3xl font-semibold tracking-tight text-maroon sm:text-4xl">
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gold-text">
+          Trusted Partners
+        </p>
+        <h2 className="mt-2 font-serif text-3xl font-semibold tracking-tight text-maroon sm:text-4xl">
           Collaborations
         </h2>
         <div
@@ -21,7 +27,7 @@ export default function Collaborations() {
         {collaborations.map((c) => (
           <li
             key={c.name}
-            className="flex items-center justify-center rounded-2xl border border-navy/10 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+            className="flex flex-col items-center gap-3 rounded-2xl border border-navy/10 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
           >
             <div className="relative h-20 w-full sm:h-24">
               <ImageWithFallback
@@ -33,6 +39,9 @@ export default function Collaborations() {
                 className="object-contain"
               />
             </div>
+            <p className="text-center text-xs font-medium leading-snug text-navy/70">
+              {c.name}
+            </p>
           </li>
         ))}
       </ul>

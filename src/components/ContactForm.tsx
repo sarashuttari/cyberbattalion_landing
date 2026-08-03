@@ -3,10 +3,11 @@
 import { CheckCircle2, Send } from "lucide-react";
 import { useState, type FormEvent } from "react";
 
-const CONTACT_EMAIL = "info@cyberbattalio.in";
+const CONTACT_EMAIL = "info@cyberbattalion.in";
 
 const reasons = [
   "Workshop / Session Request",
+  "Project / Internship Registration",
   "Collaboration Inquiry",
   "Media / Press",
   "General Question",
