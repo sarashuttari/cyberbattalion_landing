@@ -214,8 +214,11 @@ export default function WorkshopsPanel() {
 
       {lightbox && (
         <Lightbox
-          workshop={lightbox.workshop}
+          photos={lightbox.workshop.photos}
           initialIndex={lightbox.index}
+          title={lightbox.workshop.name}
+          subtitle={lightbox.workshop.college}
+          fallbackSrc="/workshops/_placeholder.svg"
           onClose={() => setLightbox(null)}
         />
       )}

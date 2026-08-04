@@ -8,6 +8,8 @@ import { useEffect, useState } from "react";
 const links = [
   { href: "/#highlights", label: "Highlights" },
   { href: "/#collaborations", label: "Collaborations" },
+  { href: "/#gallery", label: "Gallery" },
+  { href: "/#testimonials", label: "Testimonials" },
   { href: "/#centre-of-excellence", label: "Centre of Excellence" },
   { href: "/#contact", label: "Contact" },
 ];
@@ -59,7 +61,7 @@ export default function Navbar() {
           </span>
         </Link>
 
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="hidden lg:flex items-center gap-5 xl:gap-7">
           {links.map((link) => (
             <li key={link.href}>
               <Link
@@ -74,7 +76,7 @@ export default function Navbar() {
 
         <button
           type="button"
-          className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-navy hover:bg-navy/5"
+          className="lg:hidden inline-flex items-center justify-center rounded-md p-2 text-navy hover:bg-navy/5"
           aria-expanded={open}
           aria-controls="mobile-menu"
           aria-label={open ? "Close menu" : "Open menu"}
@@ -87,7 +89,7 @@ export default function Navbar() {
       <div
         id="mobile-menu"
         inert={!open}
-        className={`md:hidden overflow-hidden transition-[max-height,opacity] duration-300 ease-in-out ${
+        className={`lg:hidden overflow-hidden transition-[max-height,opacity] duration-300 ease-in-out ${
           open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >

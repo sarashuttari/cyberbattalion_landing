@@ -2,22 +2,31 @@
 
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import type { Workshop } from "@/data/workshops";
 import ImageWithFallback from "./ImageWithFallback";
 
 type Props = {
-  workshop: Workshop;
+  photos: string[];
   initialIndex: number;
+  title: string;
+  subtitle?: string;
+  fallbackSrc: string;
   onClose: () => void;
 };
 
 const FOCUSABLE_SELECTOR =
   'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
 
-export default function Lightbox({ workshop, initialIndex, onClose }: Props) {
+export default function Lightbox({
+  photos,
+  initialIndex,
+  title,
+  subtitle,
+  fallbackSrc,
+  onClose,
+}: Props) {
   const [index, setIndex] = useState(initialIndex);
   const dialogRef = useRef<HTMLDivElement>(null);
-  const total = workshop.photos.length;
+  const total = photos.length;
 
   const goPrev = () => setIndex((i) => (i - 1 + total) % total);
   const goNext = () => setIndex((i) => (i + 1) % total);
@@ -72,7 +81,7 @@ export default function Lightbox({ workshop, initialIndex, onClose }: Props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const photo = workshop.photos[index];
+  const photo = photos[index];
 
   return (
     <div
@@ -83,7 +92,7 @@ export default function Lightbox({ workshop, initialIndex, onClose }: Props) {
         ref={dialogRef}
         role="dialog"
         aria-modal="true"
-        aria-label={`${workshop.name} photos`}
+        aria-label={`${title} photos`}
         tabIndex={-1}
         onClick={(e) => e.stopPropagation()}
         className="relative flex w-full max-w-3xl flex-col outline-none"
@@ -100,9 +109,9 @@ export default function Lightbox({ workshop, initialIndex, onClose }: Props) {
         <div className="relative flex aspect-[4/3] max-h-[65vh] w-full items-center justify-center overflow-hidden rounded-xl bg-navy">
           <ImageWithFallback
             key={photo}
-            fallbackSrc="/workshops/_placeholder.svg"
+            fallbackSrc={fallbackSrc}
             src={photo}
-            alt={`${workshop.name} — photo ${index + 1} of ${total}`}
+            alt={`${title} — photo ${index + 1} of ${total}`}
             width={1600}
             height={1200}
             priority
@@ -132,9 +141,13 @@ export default function Lightbox({ workshop, initialIndex, onClose }: Props) {
         </div>
 
         <p className="mt-4 text-center text-sm text-white/90">
-          <span className="font-semibold">{workshop.name}</span>
-          {" — "}
-          {workshop.college}
+          <span className="font-semibold">{title}</span>
+          {subtitle && (
+            <>
+              {" — "}
+              {subtitle}
+            </>
+          )}
           <span className="text-white/60">
             {" "}
             · {index + 1} of {total}

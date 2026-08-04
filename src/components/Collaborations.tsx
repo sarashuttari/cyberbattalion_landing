@@ -24,26 +24,45 @@ export default function Collaborations() {
       </div>
 
       <ul className="mx-auto mt-14 grid max-w-6xl grid-cols-2 gap-6 sm:grid-cols-5">
-        {collaborations.map((c) => (
-          <li
-            key={c.name}
-            className="flex flex-col items-center gap-3 rounded-2xl border border-navy/10 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
-          >
-            <div className="relative h-20 w-full sm:h-24">
-              <ImageWithFallback
-                src={c.logo}
-                alt={c.name}
-                fallbackSrc="/collaborations/_placeholder.svg"
-                fill
-                sizes="(max-width: 640px) 40vw, 200px"
-                className="object-contain"
-              />
-            </div>
-            <p className="text-center text-xs font-medium leading-snug text-navy/70">
-              {c.name}
-            </p>
-          </li>
-        ))}
+        {collaborations.map((c) => {
+          const cardClass =
+            "flex flex-col items-center gap-3 rounded-2xl border border-navy/10 bg-white p-6 shadow-sm transition-shadow hover:shadow-md";
+          const content = (
+            <>
+              <div className="relative h-20 w-full sm:h-24">
+                <ImageWithFallback
+                  src={c.logo}
+                  alt={c.name}
+                  fallbackSrc="/collaborations/_placeholder.svg"
+                  fill
+                  sizes="(max-width: 640px) 40vw, 200px"
+                  className="object-contain"
+                />
+              </div>
+              <p className="text-center text-xs font-medium leading-snug text-navy/70">
+                {c.name}
+              </p>
+            </>
+          );
+
+          return (
+            <li key={c.name}>
+              {c.url ? (
+                <a
+                  href={c.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${c.name} (opens in a new tab)`}
+                  className={`${cardClass} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-maroon focus-visible:ring-offset-2`}
+                >
+                  {content}
+                </a>
+              ) : (
+                <div className={cardClass}>{content}</div>
+              )}
+            </li>
+          );
+        })}
       </ul>
     </section>
   );
