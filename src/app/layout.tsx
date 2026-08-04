@@ -20,7 +20,7 @@ const description =
   "Cybersecurity & Information Technology Professional. Knowledge, Awareness, Protection.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://cyberbattalion.in"),
+  metadataBase: new URL("https://cyberbetallion.com"),
   title,
   description,
   openGraph: {
