@@ -10,7 +10,8 @@ const links = [
   { href: "/#collaborations", label: "Collaborations" },
   { href: "/#gallery", label: "Gallery" },
   { href: "/#testimonials", label: "Testimonials" },
-  { href: "/#centre-of-excellence", label: "Centre of Excellence" },
+  { href: "/#team", label: "Team" },
+  { href: "/#centre-of-excellence", label: "Excellence" },
   { href: "/#contact", label: "Contact" },
 ];
 
@@ -61,7 +62,7 @@ export default function Navbar() {
           </span>
         </Link>
 
-        <ul className="hidden lg:flex items-center gap-5 xl:gap-7">
+        <ul className="hidden lg:flex items-center gap-4 xl:gap-6">
           {links.map((link) => (
             <li key={link.href}>
               <Link

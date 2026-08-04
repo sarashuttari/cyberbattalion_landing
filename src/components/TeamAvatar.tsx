@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { getInitials } from "@/lib/initials";
 
-export default function TestimonialAvatar({
+export default function TeamAvatar({
   src,
   name,
 }: {
@@ -17,7 +17,7 @@ export default function TestimonialAvatar({
     return (
       <div
         aria-hidden="true"
-        className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-maroon/10 font-serif text-lg font-semibold text-maroon"
+        className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-gold/15 font-serif text-xl font-semibold text-gold"
       >
         {getInitials(name)}
       </div>
@@ -28,10 +28,10 @@ export default function TestimonialAvatar({
     <Image
       src={src}
       alt=""
-      width={64}
-      height={64}
+      width={80}
+      height={80}
       onError={() => setErrored(true)}
-      className="h-16 w-16 shrink-0 rounded-full object-cover"
+      className="h-20 w-20 shrink-0 rounded-full object-cover"
     />
   );
 }

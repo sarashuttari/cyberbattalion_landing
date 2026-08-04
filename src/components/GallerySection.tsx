@@ -1,29 +1,30 @@
 "use client";
 
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useRef, useState } from "react";
-import { galleryPhotos } from "@/data/gallery";
+import { useState } from "react";
+import {
+  galleryCategories,
+  galleryPhotos,
+  type GalleryCategory,
+} from "@/data/gallery";
 import ImageWithFallback from "./ImageWithFallback";
 import Lightbox from "./Lightbox";
 
 const FALLBACK = "/gallery/_placeholder.svg";
+const TABS = ["All", ...galleryCategories] as const;
+type Tab = (typeof TABS)[number];
 
 export default function GallerySection() {
-  const trackRef = useRef<HTMLUListElement>(null);
+  const [tab, setTab] = useState<Tab>("All");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
-  function scrollByCard(direction: 1 | -1) {
-    const track = trackRef.current;
-    if (!track) return;
-    const card = track.querySelector("li");
-    const amount = card ? card.clientWidth + 16 : 300;
-    const reduceMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-    track.scrollBy({
-      left: direction * amount,
-      behavior: reduceMotion ? "auto" : "smooth",
-    });
+  const filtered =
+    tab === "All"
+      ? galleryPhotos
+      : galleryPhotos.filter((p) => p.category === (tab as GalleryCategory));
+
+  function selectTab(t: Tab) {
+    setTab(t);
+    setLightboxIndex(null);
   }
 
   return (
@@ -44,55 +45,50 @@ export default function GallerySection() {
         </p>
       </div>
 
-      <div className="relative mt-14">
-        <ul
-          ref={trackRef}
-          className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-6 pb-4 [-ms-overflow-style:none] [scrollbar-width:none] sm:px-[max(1.5rem,calc((100%-64rem)/2))] [&::-webkit-scrollbar]:hidden"
-        >
-          {galleryPhotos.map((photo, i) => (
-            <li key={photo.id} className="shrink-0 snap-start">
-              <button
-                type="button"
-                onClick={() => setLightboxIndex(i)}
-                aria-label={`View gallery photo ${i + 1} of ${galleryPhotos.length}`}
-                className="block h-48 w-64 overflow-hidden rounded-xl border border-navy/10 shadow-sm transition-shadow hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-maroon sm:h-56 sm:w-72"
-              >
-                <ImageWithFallback
-                  src={photo.src}
-                  alt={photo.caption ?? ""}
-                  fallbackSrc={FALLBACK}
-                  width={288}
-                  height={224}
-                  className="h-full w-full object-cover"
-                />
-              </button>
-            </li>
-          ))}
-        </ul>
+      <div className="mt-10 flex flex-wrap justify-center gap-2">
+        {TABS.map((t) => (
+          <button
+            key={t}
+            type="button"
+            onClick={() => selectTab(t)}
+            aria-pressed={tab === t}
+            className={`rounded-full px-5 py-2 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-maroon ${
+              tab === t
+                ? "bg-maroon text-white"
+                : "border border-navy/15 text-navy/70 hover:border-maroon/40 hover:text-maroon"
+            }`}
+          >
+            {t}
+          </button>
+        ))}
+      </div>
 
-        <button
-          type="button"
-          onClick={() => scrollByCard(-1)}
-          aria-label="Scroll gallery left"
-          className="absolute left-1 top-1/2 hidden -translate-y-1/2 rounded-full bg-white p-2 text-navy shadow-md hover:text-maroon focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-maroon sm:flex"
-        >
-          <ChevronLeft size={20} />
-        </button>
-        <button
-          type="button"
-          onClick={() => scrollByCard(1)}
-          aria-label="Scroll gallery right"
-          className="absolute right-1 top-1/2 hidden -translate-y-1/2 rounded-full bg-white p-2 text-navy shadow-md hover:text-maroon focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-maroon sm:flex"
-        >
-          <ChevronRight size={20} />
-        </button>
+      <div className="mx-auto mt-10 max-w-5xl columns-2 gap-4 sm:columns-3">
+        {filtered.map((photo, i) => (
+          <button
+            key={photo.id}
+            type="button"
+            onClick={() => setLightboxIndex(i)}
+            aria-label={`View gallery photo ${i + 1} of ${filtered.length}`}
+            className="mb-4 block w-full break-inside-avoid overflow-hidden rounded-xl border border-navy/10 shadow-sm transition-shadow hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-maroon"
+          >
+            <ImageWithFallback
+              src={photo.src}
+              alt={photo.caption ?? ""}
+              fallbackSrc={FALLBACK}
+              width={photo.width}
+              height={photo.height}
+              className="h-auto w-full object-cover"
+            />
+          </button>
+        ))}
       </div>
 
       {lightboxIndex !== null && (
         <Lightbox
-          photos={galleryPhotos.map((p) => p.src)}
+          photos={filtered.map((p) => p.src)}
           initialIndex={lightboxIndex}
-          title="Gallery"
+          title={`Gallery — ${tab}`}
           fallbackSrc={FALLBACK}
           onClose={() => setLightboxIndex(null)}
         />

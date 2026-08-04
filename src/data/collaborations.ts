@@ -27,4 +27,9 @@ export const collaborations: Collaborator[] = [
     logo: "/collaborations/cyverra.png",
   },
   { name: "HCLTech", logo: "/collaborations/hcltech.png", url: "https://www.hcltech.com/" },
+  {
+    name: "MANUU",
+    logo: "/collaborations/manuu.png",
+    url: "https://manuu.edu.in/",
+  },
 ];

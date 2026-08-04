@@ -23,7 +23,7 @@ export default function Collaborations() {
         </p>
       </div>
 
-      <ul className="mx-auto mt-14 grid max-w-6xl grid-cols-2 gap-6 sm:grid-cols-5">
+      <ul className="mx-auto mt-14 grid max-w-6xl grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
         {collaborations.map((c) => {
           const cardClass =
             "flex flex-col items-center gap-3 rounded-2xl border border-navy/10 bg-white p-6 shadow-sm transition-shadow hover:shadow-md";

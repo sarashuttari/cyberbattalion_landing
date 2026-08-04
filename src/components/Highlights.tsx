@@ -1,6 +1,6 @@
 "use client";
 
-import { BookOpen, ChevronDown, Handshake } from "lucide-react";
+import { BookOpen, BrainCircuit, ChevronDown, Handshake } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import WorkshopsPanel from "./WorkshopsPanel";
 
@@ -36,7 +36,7 @@ export default function Highlights() {
           At a Glance
         </h2>
 
-        <div className="mt-12 grid items-start gap-6 sm:grid-cols-2">
+        <div className="mt-12 grid items-start gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <button
             type="button"
             aria-expanded={open}
@@ -137,6 +137,23 @@ export default function Highlights() {
               </p>
               <p className="mt-1 text-sm text-muted">
                 Faculty Development Programs
+              </p>
+            </div>
+          </div>
+
+          {/* Content is a placeholder pending the client's definition of this
+              feature — confirm exact wording with her before treating it as final. */}
+          <div className={cardClass}>
+            <span className="flex h-11 w-11 items-center justify-center rounded-full bg-maroon/10 text-maroon">
+              <BrainCircuit size={20} aria-hidden="true" />
+            </span>
+            <div>
+              <p className="font-serif text-xl font-semibold text-navy">
+                Intellectual Connects
+              </p>
+              <p className="mt-1 text-sm text-muted">
+                Building meaningful connections across academia, industry,
+                and technology thought leaders
               </p>
             </div>
           </div>
