@@ -1,9 +1,9 @@
 "use client";
 
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Users } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { teamMembers } from "@/data/team";
-import TeamAvatar from "./TeamAvatar";
+import TeamPhoto from "./TeamPhoto";
 
 export default function TeamSection() {
   const trackRef = useRef<HTMLUListElement>(null);
@@ -45,18 +45,19 @@ export default function TeamSection() {
   }
 
   return (
-    <section id="team" className="bg-navy px-6 py-20 text-white sm:py-28">
+    <section id="team" className="px-6 py-20 sm:py-28">
       <div className="mx-auto max-w-5xl text-center">
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gold">
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-gold/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-gold-text">
+          <Users size={12} aria-hidden="true" />
           Our People
-        </p>
-        <h2 className="mt-2 font-serif text-3xl font-semibold tracking-tight sm:text-4xl">
-          Team Members
+        </span>
+        <h2 className="mt-3 font-serif text-3xl font-semibold tracking-tight text-maroon sm:text-4xl">
+          Meet Our Team
         </h2>
-        <div
-          aria-hidden="true"
-          className="mx-auto mt-5 h-px w-24 bg-gradient-to-r from-transparent via-gold to-transparent"
-        />
+        <p className="mx-auto mt-4 max-w-xl text-muted">
+          The people behind Cyber Battalion&rsquo;s workshops, sessions, and
+          community initiatives.
+        </p>
       </div>
 
       <div className="relative mt-14">
@@ -67,12 +68,12 @@ export default function TeamSection() {
           {teamMembers.map((m) => (
             <li
               key={m.id}
-              className="flex w-52 shrink-0 snap-center flex-col items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-8 text-center backdrop-blur-sm sm:w-56"
+              className="w-56 shrink-0 snap-center overflow-hidden rounded-2xl border border-navy/10 bg-white shadow-sm sm:w-64"
             >
-              <TeamAvatar src={m.photo} name={m.name} />
-              <div>
-                <p className="font-serif text-lg font-semibold">{m.name}</p>
-                <p className="mt-1 text-xs font-medium uppercase tracking-wide text-gold">
+              <TeamPhoto src={m.photo || undefined} name={m.name} />
+              <div className="p-4 text-left sm:p-5">
+                <p className="font-semibold text-navy">{m.name}</p>
+                <p className="mt-0.5 text-sm text-muted">
                   Cyber Battalion Team
                 </p>
               </div>
@@ -84,7 +85,7 @@ export default function TeamSection() {
           type="button"
           onClick={() => goTo(Math.max(0, active - 1))}
           aria-label="Previous team member"
-          className="absolute left-1 top-1/2 hidden -translate-y-1/2 rounded-full bg-white/10 p-2 text-white hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold sm:flex"
+          className="absolute left-1 top-[38%] hidden -translate-y-1/2 rounded-full bg-white p-2 text-navy shadow-md hover:text-maroon focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-maroon sm:flex"
         >
           <ChevronLeft size={20} />
         </button>
@@ -92,7 +93,7 @@ export default function TeamSection() {
           type="button"
           onClick={() => goTo(Math.min(teamMembers.length - 1, active + 1))}
           aria-label="Next team member"
-          className="absolute right-1 top-1/2 hidden -translate-y-1/2 rounded-full bg-white/10 p-2 text-white hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold sm:flex"
+          className="absolute right-1 top-[38%] hidden -translate-y-1/2 rounded-full bg-white p-2 text-navy shadow-md hover:text-maroon focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-maroon sm:flex"
         >
           <ChevronRight size={20} />
         </button>
@@ -106,8 +107,8 @@ export default function TeamSection() {
             onClick={() => goTo(i)}
             aria-label={`Go to ${m.name}`}
             aria-current={i === active}
-            className={`h-2 rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
-              i === active ? "w-6 bg-gold" : "w-2 bg-white/30"
+            className={`h-2 rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-maroon ${
+              i === active ? "w-6 bg-maroon" : "w-2 bg-navy/20"
             }`}
           />
         ))}

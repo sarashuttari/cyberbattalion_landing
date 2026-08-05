@@ -8,12 +8,12 @@ export default function TestimonialAvatar({
   src,
   name,
 }: {
-  src: string;
+  src?: string;
   name: string;
 }) {
   const [errored, setErrored] = useState(false);
 
-  if (errored) {
+  if (!src || errored) {
     return (
       <div
         aria-hidden="true"

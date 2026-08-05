@@ -22,7 +22,7 @@ export const testimonials: Testimonial[] = [
     designation: "",
     quote:
       "Dr. Shuttari's sessions bring a rare balance of academic depth and real-world relevance. Our faculty and students consistently come away better equipped to think about cybersecurity.",
-    photo: "/testimonials/renuka-sagar.jpg",
+    photo: "", // TODO: add real photo path once available
   },
   {
     id: "sai-krishna",
@@ -30,7 +30,7 @@ export const testimonials: Testimonial[] = [
     designation: "",
     quote:
       "The hands-on approach to teaching cybersecurity concepts made a lasting impression. It's rare to find a mentor who explains complex ideas this clearly.",
-    photo: "/testimonials/sai-krishna.jpg",
+    photo: "", // TODO: add real photo path once available
   },
   {
     id: "chairman-tgmfc",
@@ -38,7 +38,7 @@ export const testimonials: Testimonial[] = [
     designation: "",
     quote:
       "Partnering with Dr. Shuttari on our cybersecurity initiatives has been invaluable. Her commitment to bridging academia and industry sets a high standard.",
-    photo: "/testimonials/chairman-tgmfc.jpg",
+    photo: "", // TODO: add real photo path once available
   },
   {
     id: "tanvir",
@@ -46,7 +46,7 @@ export const testimonials: Testimonial[] = [
     designation: "",
     quote:
       "Every session with Dr. Shuttari is packed with practical insights you can apply immediately. I'd recommend her workshops to any student serious about cybersecurity.",
-    photo: "/testimonials/tanvir.jpg",
+    photo: "", // TODO: add real photo path once available
   },
   {
     id: "abdur-rahman",
@@ -54,7 +54,7 @@ export const testimonials: Testimonial[] = [
     designation: "",
     quote:
       "Her ability to simplify complex security concepts for students of all backgrounds is exceptional — a truly dedicated mentor.",
-    photo: "/testimonials/abdur-rahman.jpg",
+    photo: "", // TODO: add real photo path once available
   },
   {
     id: "noman",
@@ -62,7 +62,7 @@ export const testimonials: Testimonial[] = [
     designation: "",
     quote:
       "The workshop reshaped how I think about information security. Dr. Shuttari's energy and expertise are contagious.",
-    photo: "/testimonials/noman.jpg",
+    photo: "", // TODO: add real photo path once available
   },
   {
     id: "asif-basha",
@@ -70,7 +70,7 @@ export const testimonials: Testimonial[] = [
     designation: "",
     quote:
       "A phenomenal speaker who brings clarity to even the most technical cybersecurity topics. Our students walked away inspired.",
-    photo: "/testimonials/asif-basha.jpg",
+    photo: "", // TODO: add real photo path once available
   },
   {
     id: "dr-andal",
@@ -78,7 +78,7 @@ export const testimonials: Testimonial[] = [
     designation: "",
     quote:
       "Dr. Shuttari's contribution to cybersecurity education in our region has been remarkable. Her sessions are always insightful and well-structured.",
-    photo: "/testimonials/dr-andal.jpg",
+    photo: "", // TODO: add real photo path once available
   },
   {
     id: "dr-yousuf",
@@ -86,6 +86,6 @@ export const testimonials: Testimonial[] = [
     designation: "",
     quote:
       "Her dedication to nurturing the next generation of cybersecurity professionals is evident in every session she conducts.",
-    photo: "/testimonials/dr-yousuf.jpg",
+    photo: "", // TODO: add real photo path once available
   },
 ];
