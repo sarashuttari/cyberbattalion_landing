@@ -1,19 +1,30 @@
 # Gallery Photos
 
-`src/data/gallery.ts` lists 12 placeholder slots (4 each for LSA, MJS, and
-LIET) pointing at `/gallery/01.jpg` through `/gallery/12.jpg`. Drop real
-photos in here using that naming, or edit `gallery.ts` to add/remove
-entries — each just needs a unique `id`, `src`, `category` (one of `LSA`,
-`MJS`, `LIET` — add a new one to `galleryCategories` if you need another
-tab), and `width`/`height` matching the real photo's actual pixel
-dimensions (this drives the masonry grid's aspect ratio, so set it
-correctly rather than leaving the placeholder guess).
+Real event photos, organized one subfolder per institution:
 
-## Recommended size
+```
+public/gallery/
+├─ lsa/        (10 photos)
+├─ mjs/        (9 photos)
+├─ liet/       (11 photos)
+├─ Spoorthy/   (10 photos — note the capital S, matches the actual folder)
+└─ trr/        (5 photos)
+```
 
-~1600px on the long edge, JPEG, reasonably compressed.
+`src/data/gallery.ts` lists each photo individually with its real
+`width`/`height` (read via `sips -g pixelWidth -g pixelHeight <file>`) —
+this drives the masonry grid's aspect ratio, so keep it accurate if you
+add, remove, or replace a photo. `category` must be one of the values in
+`galleryCategories` (`LSA`, `MJS`, `LIET`, `Spoorthy`, `TRR`); add a new
+one there (and a new subfolder here) for another tab.
+
+## Adding a new photo
+
+1. Drop the file in the right subfolder.
+2. Get its real dimensions: `sips -g pixelWidth -g pixelHeight path/to/file.jpeg`
+3. Add an entry to `galleryPhotos` in `gallery.ts` with those exact numbers.
 
 ## Missing photos
 
 Any photo that fails to load falls back to `_placeholder.svg` automatically,
-so an incomplete set never breaks the layout.
+so a missing or renamed file never breaks the layout.

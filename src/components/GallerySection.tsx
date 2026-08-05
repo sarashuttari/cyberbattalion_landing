@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   galleryCategories,
   galleryPhotos,
-  type GalleryCategory,
+  type GalleryPhoto,
 } from "@/data/gallery";
 import ImageWithFallback from "./ImageWithFallback";
 import Lightbox from "./Lightbox";
@@ -13,14 +13,55 @@ const FALLBACK = "/gallery/_placeholder.svg";
 const TABS = ["All", ...galleryCategories] as const;
 type Tab = (typeof TABS)[number];
 
+type Positioned = { photo: GalleryPhoto; index: number };
+
+// True Pinterest-style masonry: walk the photos in order and always drop
+// the next one into whichever column is currently shortest — NOT CSS
+// `columns`, which fills one column completely before moving to the next
+// and breaks reading order.
+function distributeColumns(
+  items: Positioned[],
+  columnCount: number
+): Positioned[][] {
+  const columns: Positioned[][] = Array.from({ length: columnCount }, () => []);
+  const heights = new Array(columnCount).fill(0);
+  for (const item of items) {
+    let shortest = 0;
+    for (let i = 1; i < columnCount; i++) {
+      if (heights[i] < heights[shortest]) shortest = i;
+    }
+    columns[shortest].push(item);
+    heights[shortest] += item.photo.height / item.photo.width;
+  }
+  return columns;
+}
+
 export default function GallerySection() {
   const [tab, setTab] = useState<Tab>("All");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [columnCount, setColumnCount] = useState(3);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 639px)");
+    const update = () => setColumnCount(mq.matches ? 2 : 3);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
 
   const filtered =
     tab === "All"
       ? galleryPhotos
-      : galleryPhotos.filter((p) => p.category === (tab as GalleryCategory));
+      : galleryPhotos.filter((p) => p.category === tab);
+
+  const positioned = useMemo<Positioned[]>(
+    () => filtered.map((photo, index) => ({ photo, index })),
+    [filtered]
+  );
+  const columns = useMemo(
+    () => distributeColumns(positioned, columnCount),
+    [positioned, columnCount]
+  );
 
   function selectTab(t: Tab) {
     setTab(t);
@@ -63,24 +104,28 @@ export default function GallerySection() {
         ))}
       </div>
 
-      <div className="mx-auto mt-10 max-w-5xl columns-2 gap-4 sm:columns-3">
-        {filtered.map((photo, i) => (
-          <button
-            key={photo.id}
-            type="button"
-            onClick={() => setLightboxIndex(i)}
-            aria-label={`View gallery photo ${i + 1} of ${filtered.length}`}
-            className="mb-4 block w-full break-inside-avoid overflow-hidden rounded-xl border border-navy/10 shadow-sm transition-shadow hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-maroon"
-          >
-            <ImageWithFallback
-              src={photo.src}
-              alt={photo.caption ?? ""}
-              fallbackSrc={FALLBACK}
-              width={photo.width}
-              height={photo.height}
-              className="h-auto w-full object-cover"
-            />
-          </button>
+      <div className="mx-auto mt-10 flex max-w-5xl gap-4">
+        {columns.map((column, colIdx) => (
+          <div key={colIdx} className="flex flex-1 flex-col gap-4">
+            {column.map(({ photo, index }) => (
+              <button
+                key={photo.id}
+                type="button"
+                onClick={() => setLightboxIndex(index)}
+                aria-label={`View gallery photo ${index + 1} of ${filtered.length}`}
+                className="block w-full overflow-hidden rounded-xl border border-navy/10 shadow-sm transition-shadow hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-maroon"
+              >
+                <ImageWithFallback
+                  src={photo.src}
+                  alt={photo.caption ?? ""}
+                  fallbackSrc={FALLBACK}
+                  width={photo.width}
+                  height={photo.height}
+                  className="h-auto w-full object-cover"
+                />
+              </button>
+            ))}
+          </div>
         ))}
       </div>
 

@@ -1,9 +1,9 @@
 "use client";
 
-import { CheckCircle2, Send } from "lucide-react";
+import { AlertCircle, CheckCircle2, Loader2, Send } from "lucide-react";
 import { useState, type FormEvent } from "react";
 
-const CONTACT_EMAIL = "info@cyberbattalion.in";
+const FALLBACK_EMAIL = "info@cyberbattalion.in";
 
 const reasons = [
   "Workshop / Session Request",
@@ -17,37 +17,47 @@ const reasons = [
 const inputClass =
   "w-full rounded-lg border border-navy/15 bg-bg px-4 py-2.5 text-sm text-navy placeholder:text-muted focus:border-maroon focus:outline-none focus:ring-1 focus:ring-maroon";
 
-export default function ContactForm() {
-  const [submitted, setSubmitted] = useState(false);
+type Status = "idle" | "submitting" | "success" | "error";
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+export default function ContactForm() {
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
-    const name = String(data.get("name") ?? "");
-    const email = String(data.get("email") ?? "");
-    const phone = String(data.get("phone") ?? "");
-    const reason = String(data.get("reason") ?? "");
-    const message = String(data.get("message") ?? "");
+    const payload = {
+      name: String(data.get("name") ?? ""),
+      email: String(data.get("email") ?? ""),
+      phone: String(data.get("phone") ?? ""),
+      reason: String(data.get("reason") ?? ""),
+      message: String(data.get("message") ?? ""),
+    };
 
-    const subject = `[${reason}] Query from ${name}`;
-    const body = [
-      `Name: ${name}`,
-      `Email: ${email}`,
-      phone && `Phone: ${phone}`,
-      `Reason: ${reason}`,
-      "",
-      message,
-    ]
-      .filter(Boolean)
-      .join("\n");
+    setStatus("submitting");
+    setErrorMessage("");
 
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const json = await res.json();
 
-    setSubmitted(true);
-    form.reset();
+      if (!res.ok || !json.ok) {
+        throw new Error(json.error || "Something went wrong.");
+      }
+
+      setStatus("success");
+      form.reset();
+    } catch {
+      setStatus("error");
+      setErrorMessage(
+        `Couldn't send that automatically. Please email us directly at ${FALLBACK_EMAIL}.`
+      );
+    }
   }
 
   return (
@@ -151,19 +161,34 @@ export default function ContactForm() {
       <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
         <button
           type="submit"
-          className="inline-flex items-center gap-2 rounded-full bg-maroon px-8 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-maroon-dark"
+          disabled={status === "submitting"}
+          className="inline-flex items-center gap-2 rounded-full bg-maroon px-8 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-maroon-dark disabled:cursor-not-allowed disabled:opacity-60"
         >
-          <Send size={16} aria-hidden="true" />
-          Send Message
+          {status === "submitting" ? (
+            <Loader2 size={16} className="animate-spin" aria-hidden="true" />
+          ) : (
+            <Send size={16} aria-hidden="true" />
+          )}
+          {status === "submitting" ? "Sending..." : "Send Message"}
         </button>
 
-        {submitted && (
+        {status === "success" && (
           <p
             role="status"
             className="inline-flex items-center gap-1.5 text-sm text-navy/80"
           >
             <CheckCircle2 size={16} className="text-maroon" aria-hidden="true" />
-            Your email app should open with this ready to send.
+            Message sent — we&rsquo;ll get back to you soon.
+          </p>
+        )}
+
+        {status === "error" && (
+          <p
+            role="alert"
+            className="inline-flex items-center gap-1.5 text-sm text-navy/80"
+          >
+            <AlertCircle size={16} className="text-maroon" aria-hidden="true" />
+            {errorMessage}
           </p>
         )}
       </div>
