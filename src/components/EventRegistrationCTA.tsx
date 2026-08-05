@@ -4,15 +4,10 @@ import { ArrowRight, Award, Lock, QrCode, ShieldCheck, Sparkles, Target, Users }
 import Image from "next/image";
 import { useState } from "react";
 
+const REGISTER_FORM_URL = "https://forms.gle/8j9k9VQKTuxggxr7A";
+
 export default function EventRegistrationCTA() {
   const [showQR, setShowQR] = useState(false);
-
-  const scrollToContact = () => {
-    const el = document.getElementById("contact");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <section id="event-registration" className="px-6 py-12 sm:py-16">
@@ -94,14 +89,15 @@ export default function EventRegistrationCTA() {
 
               {/* Actions */}
               <div className="mt-8 flex flex-wrap items-center gap-4">
-                <button
-                  type="button"
-                  onClick={scrollToContact}
+                <a
+                  href={REGISTER_FORM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2.5 rounded-full bg-gold px-8 py-3.5 text-sm font-bold text-navy shadow-lg shadow-gold/25 transition-all hover:bg-amber-400 hover:shadow-gold/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
                 >
                   <span>Register Now — ₹99</span>
                   <ArrowRight size={18} />
-                </button>
+                </a>
 
                 <button
                   type="button"

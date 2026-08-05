@@ -152,7 +152,9 @@ export default function Highlights() {
                   From capstone research to industry-sponsored initiatives — practical cybersecurity, AI, and IT projects with pathways into the upcoming Centre of Excellence.
                 </p>
                 <a
-                  href="#contact"
+                  href="https://forms.gle/8j9k9VQKTuxggxr7A"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-4 inline-flex items-center gap-2 rounded-full bg-maroon px-5 py-2 text-xs font-bold text-white shadow-sm hover:bg-maroon-dark"
                 >
                   Register Interest
