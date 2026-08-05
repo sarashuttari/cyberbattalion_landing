@@ -105,7 +105,7 @@ export default function WorkshopsPanel() {
                         aria-label={`View photo ${i + 1} of ${workshop.name}`}
                       >
                         <ImageWithFallback
-                          fallbackSrc="/workshops/_placeholder.svg"
+                          fallbackSrc="/images/workshops/_placeholder.svg"
                           key={photo}
                           src={photo}
                           alt=""
@@ -123,7 +123,7 @@ export default function WorkshopsPanel() {
                         aria-label={`View all ${workshop.photos.length} photos of ${workshop.name}`}
                       >
                         <ImageWithFallback
-                          fallbackSrc="/workshops/_placeholder.svg"
+                          fallbackSrc="/images/workshops/_placeholder.svg"
                           key={workshop.photos[visiblePhotos.length]}
                           src={workshop.photos[visiblePhotos.length]}
                           alt=""
@@ -218,7 +218,7 @@ export default function WorkshopsPanel() {
           initialIndex={lightbox.index}
           title={lightbox.workshop.name}
           subtitle={lightbox.workshop.college}
-          fallbackSrc="/workshops/_placeholder.svg"
+          fallbackSrc="/images/workshops/_placeholder.svg"
           onClose={() => setLightbox(null)}
         />
       )}

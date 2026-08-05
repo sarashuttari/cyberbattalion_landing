@@ -33,7 +33,7 @@ export default function Collaborations() {
                 <ImageWithFallback
                   src={c.logo}
                   alt={c.name}
-                  fallbackSrc="/collaborations/_placeholder.svg"
+                  fallbackSrc="/images/collaborations/_placeholder.svg"
                   fill
                   sizes="(max-width: 640px) 40vw, 200px"
                   className="object-contain"

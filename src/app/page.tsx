@@ -8,10 +8,12 @@ import Highlights from "@/components/Highlights";
 import SeminarsSection from "@/components/SeminarsSection";
 import TeamSection from "@/components/TeamSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import WelcomeModal from "@/components/WelcomeModal";
 
 export default function Home() {
   return (
     <>
+      <WelcomeModal />
       <AnnouncementMarquee />
       <Hero />
       <Collaborations />

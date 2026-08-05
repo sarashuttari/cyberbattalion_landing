@@ -7,7 +7,7 @@ export type Workshop = {
   location: string; // "Hyderabad, Telangana"
   attendees: number;
   topics: string[]; // ["Ethical Hacking", "AI Security"]
-  photos: string[]; // ["/workshops/<slug>/01.jpg", "/workshops/<slug>/02.jpg"]
+  photos: string[]; // ["/images/workshops/<slug>/01.jpg", "/images/workshops/<slug>/02.jpg"]
 };
 
 // 40 placeholder entries — plausible Hyderabad/Telangana engineering colleges
@@ -23,10 +23,10 @@ export const workshops: Workshop[] = [
     attendees: 144,
     topics: ["Career Guidance", "Industry-Academia Collaboration"],
     photos: [
-      "/workshops/01-cmr-college-of-engineering-and-technology/01.jpg",
-      "/workshops/01-cmr-college-of-engineering-and-technology/02.jpg",
-      "/workshops/01-cmr-college-of-engineering-and-technology/03.jpg",
-      "/workshops/01-cmr-college-of-engineering-and-technology/04.jpg",
+      "/images/workshops/01-cmr-college-of-engineering-and-technology/01.jpg",
+      "/images/workshops/01-cmr-college-of-engineering-and-technology/02.jpg",
+      "/images/workshops/01-cmr-college-of-engineering-and-technology/03.jpg",
+      "/images/workshops/01-cmr-college-of-engineering-and-technology/04.jpg",
     ],
   },
   {
@@ -39,9 +39,9 @@ export const workshops: Workshop[] = [
     attendees: 170,
     topics: ["Digital Forensics", "Incident Response"],
     photos: [
-      "/workshops/02-cmr-institute-of-technology/01.jpg",
-      "/workshops/02-cmr-institute-of-technology/02.jpg",
-      "/workshops/02-cmr-institute-of-technology/03.jpg",
+      "/images/workshops/02-cmr-institute-of-technology/01.jpg",
+      "/images/workshops/02-cmr-institute-of-technology/02.jpg",
+      "/images/workshops/02-cmr-institute-of-technology/03.jpg",
     ],
   },
   {
@@ -54,12 +54,12 @@ export const workshops: Workshop[] = [
     attendees: 103,
     topics: ["Bug Bounty", "Ethical Hacking"],
     photos: [
-      "/workshops/03-cmr-engineering-college/01.jpg",
-      "/workshops/03-cmr-engineering-college/02.jpg",
-      "/workshops/03-cmr-engineering-college/03.jpg",
-      "/workshops/03-cmr-engineering-college/04.jpg",
-      "/workshops/03-cmr-engineering-college/05.jpg",
-      "/workshops/03-cmr-engineering-college/06.jpg",
+      "/images/workshops/03-cmr-engineering-college/01.jpg",
+      "/images/workshops/03-cmr-engineering-college/02.jpg",
+      "/images/workshops/03-cmr-engineering-college/03.jpg",
+      "/images/workshops/03-cmr-engineering-college/04.jpg",
+      "/images/workshops/03-cmr-engineering-college/05.jpg",
+      "/images/workshops/03-cmr-engineering-college/06.jpg",
     ],
   },
   {
@@ -72,9 +72,9 @@ export const workshops: Workshop[] = [
     attendees: 65,
     topics: ["Social Engineering", "Cyber Law"],
     photos: [
-      "/workshops/04-vardhaman-college-of-engineering/01.jpg",
-      "/workshops/04-vardhaman-college-of-engineering/02.jpg",
-      "/workshops/04-vardhaman-college-of-engineering/03.jpg",
+      "/images/workshops/04-vardhaman-college-of-engineering/01.jpg",
+      "/images/workshops/04-vardhaman-college-of-engineering/02.jpg",
+      "/images/workshops/04-vardhaman-college-of-engineering/03.jpg",
     ],
   },
   {
@@ -87,10 +87,10 @@ export const workshops: Workshop[] = [
     attendees: 109,
     topics: ["Cyber Law", "Career Guidance"],
     photos: [
-      "/workshops/05-vasavi-college-of-engineering/01.jpg",
-      "/workshops/05-vasavi-college-of-engineering/02.jpg",
-      "/workshops/05-vasavi-college-of-engineering/03.jpg",
-      "/workshops/05-vasavi-college-of-engineering/04.jpg",
+      "/images/workshops/05-vasavi-college-of-engineering/01.jpg",
+      "/images/workshops/05-vasavi-college-of-engineering/02.jpg",
+      "/images/workshops/05-vasavi-college-of-engineering/03.jpg",
+      "/images/workshops/05-vasavi-college-of-engineering/04.jpg",
     ],
   },
   {
@@ -103,10 +103,10 @@ export const workshops: Workshop[] = [
     attendees: 177,
     topics: ["Secure Coding", "OWASP Top 10"],
     photos: [
-      "/workshops/06-chaitanya-bharathi-institute-of-technology/01.jpg",
-      "/workshops/06-chaitanya-bharathi-institute-of-technology/02.jpg",
-      "/workshops/06-chaitanya-bharathi-institute-of-technology/03.jpg",
-      "/workshops/06-chaitanya-bharathi-institute-of-technology/04.jpg",
+      "/images/workshops/06-chaitanya-bharathi-institute-of-technology/01.jpg",
+      "/images/workshops/06-chaitanya-bharathi-institute-of-technology/02.jpg",
+      "/images/workshops/06-chaitanya-bharathi-institute-of-technology/03.jpg",
+      "/images/workshops/06-chaitanya-bharathi-institute-of-technology/04.jpg",
     ],
   },
   {
@@ -119,12 +119,12 @@ export const workshops: Workshop[] = [
     attendees: 175,
     topics: ["Mobile Security", "Secure Coding"],
     photos: [
-      "/workshops/07-mvsr-engineering-college/01.jpg",
-      "/workshops/07-mvsr-engineering-college/02.jpg",
-      "/workshops/07-mvsr-engineering-college/03.jpg",
-      "/workshops/07-mvsr-engineering-college/04.jpg",
-      "/workshops/07-mvsr-engineering-college/05.jpg",
-      "/workshops/07-mvsr-engineering-college/06.jpg",
+      "/images/workshops/07-mvsr-engineering-college/01.jpg",
+      "/images/workshops/07-mvsr-engineering-college/02.jpg",
+      "/images/workshops/07-mvsr-engineering-college/03.jpg",
+      "/images/workshops/07-mvsr-engineering-college/04.jpg",
+      "/images/workshops/07-mvsr-engineering-college/05.jpg",
+      "/images/workshops/07-mvsr-engineering-college/06.jpg",
     ],
   },
   {
@@ -137,9 +137,9 @@ export const workshops: Workshop[] = [
     attendees: 195,
     topics: ["Cryptography", "Network Security"],
     photos: [
-      "/workshops/08-vnr-vignana-jyothi-institute-of-engineering-and-technology/01.jpg",
-      "/workshops/08-vnr-vignana-jyothi-institute-of-engineering-and-technology/02.jpg",
-      "/workshops/08-vnr-vignana-jyothi-institute-of-engineering-and-technology/03.jpg",
+      "/images/workshops/08-vnr-vignana-jyothi-institute-of-engineering-and-technology/01.jpg",
+      "/images/workshops/08-vnr-vignana-jyothi-institute-of-engineering-and-technology/02.jpg",
+      "/images/workshops/08-vnr-vignana-jyothi-institute-of-engineering-and-technology/03.jpg",
     ],
   },
   {
@@ -152,12 +152,12 @@ export const workshops: Workshop[] = [
     attendees: 123,
     topics: ["AI Security", "Machine Learning"],
     photos: [
-      "/workshops/09-gokaraju-rangaraju-institute-of-engineering-and-technology/01.jpg",
-      "/workshops/09-gokaraju-rangaraju-institute-of-engineering-and-technology/02.jpg",
-      "/workshops/09-gokaraju-rangaraju-institute-of-engineering-and-technology/03.jpg",
-      "/workshops/09-gokaraju-rangaraju-institute-of-engineering-and-technology/04.jpg",
-      "/workshops/09-gokaraju-rangaraju-institute-of-engineering-and-technology/05.jpg",
-      "/workshops/09-gokaraju-rangaraju-institute-of-engineering-and-technology/06.jpg",
+      "/images/workshops/09-gokaraju-rangaraju-institute-of-engineering-and-technology/01.jpg",
+      "/images/workshops/09-gokaraju-rangaraju-institute-of-engineering-and-technology/02.jpg",
+      "/images/workshops/09-gokaraju-rangaraju-institute-of-engineering-and-technology/03.jpg",
+      "/images/workshops/09-gokaraju-rangaraju-institute-of-engineering-and-technology/04.jpg",
+      "/images/workshops/09-gokaraju-rangaraju-institute-of-engineering-and-technology/05.jpg",
+      "/images/workshops/09-gokaraju-rangaraju-institute-of-engineering-and-technology/06.jpg",
     ],
   },
   {
@@ -170,10 +170,10 @@ export const workshops: Workshop[] = [
     attendees: 144,
     topics: ["Cyber Law", "Career Guidance"],
     photos: [
-      "/workshops/10-anurag-university/01.jpg",
-      "/workshops/10-anurag-university/02.jpg",
-      "/workshops/10-anurag-university/03.jpg",
-      "/workshops/10-anurag-university/04.jpg",
+      "/images/workshops/10-anurag-university/01.jpg",
+      "/images/workshops/10-anurag-university/02.jpg",
+      "/images/workshops/10-anurag-university/03.jpg",
+      "/images/workshops/10-anurag-university/04.jpg",
     ],
   },
   {
@@ -186,12 +186,12 @@ export const workshops: Workshop[] = [
     attendees: 97,
     topics: ["AI Security", "Machine Learning"],
     photos: [
-      "/workshops/11-malla-reddy-engineering-college/01.jpg",
-      "/workshops/11-malla-reddy-engineering-college/02.jpg",
-      "/workshops/11-malla-reddy-engineering-college/03.jpg",
-      "/workshops/11-malla-reddy-engineering-college/04.jpg",
-      "/workshops/11-malla-reddy-engineering-college/05.jpg",
-      "/workshops/11-malla-reddy-engineering-college/06.jpg",
+      "/images/workshops/11-malla-reddy-engineering-college/01.jpg",
+      "/images/workshops/11-malla-reddy-engineering-college/02.jpg",
+      "/images/workshops/11-malla-reddy-engineering-college/03.jpg",
+      "/images/workshops/11-malla-reddy-engineering-college/04.jpg",
+      "/images/workshops/11-malla-reddy-engineering-college/05.jpg",
+      "/images/workshops/11-malla-reddy-engineering-college/06.jpg",
     ],
   },
   {
@@ -204,9 +204,9 @@ export const workshops: Workshop[] = [
     attendees: 173,
     topics: ["Mobile Security", "Secure Coding"],
     photos: [
-      "/workshops/12-malla-reddy-college-of-engineering-and-technology/01.jpg",
-      "/workshops/12-malla-reddy-college-of-engineering-and-technology/02.jpg",
-      "/workshops/12-malla-reddy-college-of-engineering-and-technology/03.jpg",
+      "/images/workshops/12-malla-reddy-college-of-engineering-and-technology/01.jpg",
+      "/images/workshops/12-malla-reddy-college-of-engineering-and-technology/02.jpg",
+      "/images/workshops/12-malla-reddy-college-of-engineering-and-technology/03.jpg",
     ],
   },
   {
@@ -219,9 +219,9 @@ export const workshops: Workshop[] = [
     attendees: 162,
     topics: ["Machine Learning", "AI Security"],
     photos: [
-      "/workshops/13-sreenidhi-institute-of-science-and-technology/01.jpg",
-      "/workshops/13-sreenidhi-institute-of-science-and-technology/02.jpg",
-      "/workshops/13-sreenidhi-institute-of-science-and-technology/03.jpg",
+      "/images/workshops/13-sreenidhi-institute-of-science-and-technology/01.jpg",
+      "/images/workshops/13-sreenidhi-institute-of-science-and-technology/02.jpg",
+      "/images/workshops/13-sreenidhi-institute-of-science-and-technology/03.jpg",
     ],
   },
   {
@@ -234,9 +234,9 @@ export const workshops: Workshop[] = [
     attendees: 133,
     topics: ["AI Security", "Machine Learning"],
     photos: [
-      "/workshops/14-sreyas-institute-of-engineering-and-technology/01.jpg",
-      "/workshops/14-sreyas-institute-of-engineering-and-technology/02.jpg",
-      "/workshops/14-sreyas-institute-of-engineering-and-technology/03.jpg",
+      "/images/workshops/14-sreyas-institute-of-engineering-and-technology/01.jpg",
+      "/images/workshops/14-sreyas-institute-of-engineering-and-technology/02.jpg",
+      "/images/workshops/14-sreyas-institute-of-engineering-and-technology/03.jpg",
     ],
   },
   {
@@ -249,9 +249,9 @@ export const workshops: Workshop[] = [
     attendees: 108,
     topics: ["CTF", "Ethical Hacking"],
     photos: [
-      "/workshops/15-guru-nanak-institutions-technical-campus/01.jpg",
-      "/workshops/15-guru-nanak-institutions-technical-campus/02.jpg",
-      "/workshops/15-guru-nanak-institutions-technical-campus/03.jpg",
+      "/images/workshops/15-guru-nanak-institutions-technical-campus/01.jpg",
+      "/images/workshops/15-guru-nanak-institutions-technical-campus/02.jpg",
+      "/images/workshops/15-guru-nanak-institutions-technical-campus/03.jpg",
     ],
   },
   {
@@ -264,10 +264,10 @@ export const workshops: Workshop[] = [
     attendees: 60,
     topics: ["Cyber Law", "Career Guidance"],
     photos: [
-      "/workshops/16-keshav-memorial-institute-of-technology/01.jpg",
-      "/workshops/16-keshav-memorial-institute-of-technology/02.jpg",
-      "/workshops/16-keshav-memorial-institute-of-technology/03.jpg",
-      "/workshops/16-keshav-memorial-institute-of-technology/04.jpg",
+      "/images/workshops/16-keshav-memorial-institute-of-technology/01.jpg",
+      "/images/workshops/16-keshav-memorial-institute-of-technology/02.jpg",
+      "/images/workshops/16-keshav-memorial-institute-of-technology/03.jpg",
+      "/images/workshops/16-keshav-memorial-institute-of-technology/04.jpg",
     ],
   },
   {
@@ -280,10 +280,10 @@ export const workshops: Workshop[] = [
     attendees: 99,
     topics: ["Bug Bounty", "Ethical Hacking"],
     photos: [
-      "/workshops/17-vignan-institute-of-technology-and-science/01.jpg",
-      "/workshops/17-vignan-institute-of-technology-and-science/02.jpg",
-      "/workshops/17-vignan-institute-of-technology-and-science/03.jpg",
-      "/workshops/17-vignan-institute-of-technology-and-science/04.jpg",
+      "/images/workshops/17-vignan-institute-of-technology-and-science/01.jpg",
+      "/images/workshops/17-vignan-institute-of-technology-and-science/02.jpg",
+      "/images/workshops/17-vignan-institute-of-technology-and-science/03.jpg",
+      "/images/workshops/17-vignan-institute-of-technology-and-science/04.jpg",
     ],
   },
   {
@@ -296,10 +296,10 @@ export const workshops: Workshop[] = [
     attendees: 153,
     topics: ["OWASP Top 10", "Secure Coding"],
     photos: [
-      "/workshops/18-geethanjali-college-of-engineering-and-technology/01.jpg",
-      "/workshops/18-geethanjali-college-of-engineering-and-technology/02.jpg",
-      "/workshops/18-geethanjali-college-of-engineering-and-technology/03.jpg",
-      "/workshops/18-geethanjali-college-of-engineering-and-technology/04.jpg",
+      "/images/workshops/18-geethanjali-college-of-engineering-and-technology/01.jpg",
+      "/images/workshops/18-geethanjali-college-of-engineering-and-technology/02.jpg",
+      "/images/workshops/18-geethanjali-college-of-engineering-and-technology/03.jpg",
+      "/images/workshops/18-geethanjali-college-of-engineering-and-technology/04.jpg",
     ],
   },
   {
@@ -312,10 +312,10 @@ export const workshops: Workshop[] = [
     attendees: 113,
     topics: ["Career Guidance", "Ethical Hacking"],
     photos: [
-      "/workshops/19-st-martins-engineering-college/01.jpg",
-      "/workshops/19-st-martins-engineering-college/02.jpg",
-      "/workshops/19-st-martins-engineering-college/03.jpg",
-      "/workshops/19-st-martins-engineering-college/04.jpg",
+      "/images/workshops/19-st-martins-engineering-college/01.jpg",
+      "/images/workshops/19-st-martins-engineering-college/02.jpg",
+      "/images/workshops/19-st-martins-engineering-college/03.jpg",
+      "/images/workshops/19-st-martins-engineering-college/04.jpg",
     ],
   },
   {
@@ -328,9 +328,9 @@ export const workshops: Workshop[] = [
     attendees: 161,
     topics: ["AI Security", "Machine Learning"],
     photos: [
-      "/workshops/20-tkr-college-of-engineering-and-technology/01.jpg",
-      "/workshops/20-tkr-college-of-engineering-and-technology/02.jpg",
-      "/workshops/20-tkr-college-of-engineering-and-technology/03.jpg",
+      "/images/workshops/20-tkr-college-of-engineering-and-technology/01.jpg",
+      "/images/workshops/20-tkr-college-of-engineering-and-technology/02.jpg",
+      "/images/workshops/20-tkr-college-of-engineering-and-technology/03.jpg",
     ],
   },
   {
@@ -343,12 +343,12 @@ export const workshops: Workshop[] = [
     attendees: 90,
     topics: ["Ransomware Defense", "Incident Response"],
     photos: [
-      "/workshops/21-mlr-institute-of-technology/01.jpg",
-      "/workshops/21-mlr-institute-of-technology/02.jpg",
-      "/workshops/21-mlr-institute-of-technology/03.jpg",
-      "/workshops/21-mlr-institute-of-technology/04.jpg",
-      "/workshops/21-mlr-institute-of-technology/05.jpg",
-      "/workshops/21-mlr-institute-of-technology/06.jpg",
+      "/images/workshops/21-mlr-institute-of-technology/01.jpg",
+      "/images/workshops/21-mlr-institute-of-technology/02.jpg",
+      "/images/workshops/21-mlr-institute-of-technology/03.jpg",
+      "/images/workshops/21-mlr-institute-of-technology/04.jpg",
+      "/images/workshops/21-mlr-institute-of-technology/05.jpg",
+      "/images/workshops/21-mlr-institute-of-technology/06.jpg",
     ],
   },
   {
@@ -361,10 +361,10 @@ export const workshops: Workshop[] = [
     attendees: 98,
     topics: ["CTF", "Ethical Hacking"],
     photos: [
-      "/workshops/22-muffakham-jah-college-of-engineering-and-technology/01.jpg",
-      "/workshops/22-muffakham-jah-college-of-engineering-and-technology/02.jpg",
-      "/workshops/22-muffakham-jah-college-of-engineering-and-technology/03.jpg",
-      "/workshops/22-muffakham-jah-college-of-engineering-and-technology/04.jpg",
+      "/images/workshops/22-muffakham-jah-college-of-engineering-and-technology/01.jpg",
+      "/images/workshops/22-muffakham-jah-college-of-engineering-and-technology/02.jpg",
+      "/images/workshops/22-muffakham-jah-college-of-engineering-and-technology/03.jpg",
+      "/images/workshops/22-muffakham-jah-college-of-engineering-and-technology/04.jpg",
     ],
   },
   {
@@ -377,9 +377,9 @@ export const workshops: Workshop[] = [
     attendees: 132,
     topics: ["Mobile Security", "Secure Coding"],
     photos: [
-      "/workshops/23-ace-engineering-college/01.jpg",
-      "/workshops/23-ace-engineering-college/02.jpg",
-      "/workshops/23-ace-engineering-college/03.jpg",
+      "/images/workshops/23-ace-engineering-college/01.jpg",
+      "/images/workshops/23-ace-engineering-college/02.jpg",
+      "/images/workshops/23-ace-engineering-college/03.jpg",
     ],
   },
   {
@@ -392,9 +392,9 @@ export const workshops: Workshop[] = [
     attendees: 54,
     topics: ["Digital Forensics", "Incident Response"],
     photos: [
-      "/workshops/24-institute-of-aeronautical-engineering/01.jpg",
-      "/workshops/24-institute-of-aeronautical-engineering/02.jpg",
-      "/workshops/24-institute-of-aeronautical-engineering/03.jpg",
+      "/images/workshops/24-institute-of-aeronautical-engineering/01.jpg",
+      "/images/workshops/24-institute-of-aeronautical-engineering/02.jpg",
+      "/images/workshops/24-institute-of-aeronautical-engineering/03.jpg",
     ],
   },
   {
@@ -407,9 +407,9 @@ export const workshops: Workshop[] = [
     attendees: 161,
     topics: ["Social Engineering", "Cyber Law"],
     photos: [
-      "/workshops/25-cvr-college-of-engineering/01.jpg",
-      "/workshops/25-cvr-college-of-engineering/02.jpg",
-      "/workshops/25-cvr-college-of-engineering/03.jpg",
+      "/images/workshops/25-cvr-college-of-engineering/01.jpg",
+      "/images/workshops/25-cvr-college-of-engineering/02.jpg",
+      "/images/workshops/25-cvr-college-of-engineering/03.jpg",
     ],
   },
   {
@@ -422,10 +422,10 @@ export const workshops: Workshop[] = [
     attendees: 196,
     topics: ["OWASP Top 10", "Secure Coding"],
     photos: [
-      "/workshops/26-jntuh-college-of-engineering-hyderabad/01.jpg",
-      "/workshops/26-jntuh-college-of-engineering-hyderabad/02.jpg",
-      "/workshops/26-jntuh-college-of-engineering-hyderabad/03.jpg",
-      "/workshops/26-jntuh-college-of-engineering-hyderabad/04.jpg",
+      "/images/workshops/26-jntuh-college-of-engineering-hyderabad/01.jpg",
+      "/images/workshops/26-jntuh-college-of-engineering-hyderabad/02.jpg",
+      "/images/workshops/26-jntuh-college-of-engineering-hyderabad/03.jpg",
+      "/images/workshops/26-jntuh-college-of-engineering-hyderabad/04.jpg",
     ],
   },
   {
@@ -438,12 +438,12 @@ export const workshops: Workshop[] = [
     attendees: 177,
     topics: ["Career Guidance", "Ethical Hacking"],
     photos: [
-      "/workshops/27-osmania-university-college-of-engineering/01.jpg",
-      "/workshops/27-osmania-university-college-of-engineering/02.jpg",
-      "/workshops/27-osmania-university-college-of-engineering/03.jpg",
-      "/workshops/27-osmania-university-college-of-engineering/04.jpg",
-      "/workshops/27-osmania-university-college-of-engineering/05.jpg",
-      "/workshops/27-osmania-university-college-of-engineering/06.jpg",
+      "/images/workshops/27-osmania-university-college-of-engineering/01.jpg",
+      "/images/workshops/27-osmania-university-college-of-engineering/02.jpg",
+      "/images/workshops/27-osmania-university-college-of-engineering/03.jpg",
+      "/images/workshops/27-osmania-university-college-of-engineering/04.jpg",
+      "/images/workshops/27-osmania-university-college-of-engineering/05.jpg",
+      "/images/workshops/27-osmania-university-college-of-engineering/06.jpg",
     ],
   },
   {
@@ -456,9 +456,9 @@ export const workshops: Workshop[] = [
     attendees: 216,
     topics: ["Bug Bounty", "Ethical Hacking"],
     photos: [
-      "/workshops/28-b-v-raju-institute-of-technology/01.jpg",
-      "/workshops/28-b-v-raju-institute-of-technology/02.jpg",
-      "/workshops/28-b-v-raju-institute-of-technology/03.jpg",
+      "/images/workshops/28-b-v-raju-institute-of-technology/01.jpg",
+      "/images/workshops/28-b-v-raju-institute-of-technology/02.jpg",
+      "/images/workshops/28-b-v-raju-institute-of-technology/03.jpg",
     ],
   },
   {
@@ -471,12 +471,12 @@ export const workshops: Workshop[] = [
     attendees: 99,
     topics: ["Secure Coding", "OWASP Top 10"],
     photos: [
-      "/workshops/29-vignana-bharathi-institute-of-technology/01.jpg",
-      "/workshops/29-vignana-bharathi-institute-of-technology/02.jpg",
-      "/workshops/29-vignana-bharathi-institute-of-technology/03.jpg",
-      "/workshops/29-vignana-bharathi-institute-of-technology/04.jpg",
-      "/workshops/29-vignana-bharathi-institute-of-technology/05.jpg",
-      "/workshops/29-vignana-bharathi-institute-of-technology/06.jpg",
+      "/images/workshops/29-vignana-bharathi-institute-of-technology/01.jpg",
+      "/images/workshops/29-vignana-bharathi-institute-of-technology/02.jpg",
+      "/images/workshops/29-vignana-bharathi-institute-of-technology/03.jpg",
+      "/images/workshops/29-vignana-bharathi-institute-of-technology/04.jpg",
+      "/images/workshops/29-vignana-bharathi-institute-of-technology/05.jpg",
+      "/images/workshops/29-vignana-bharathi-institute-of-technology/06.jpg",
     ],
   },
   {
@@ -489,10 +489,10 @@ export const workshops: Workshop[] = [
     attendees: 180,
     topics: ["IoT Security", "Network Security"],
     photos: [
-      "/workshops/30-nalla-malla-reddy-engineering-college/01.jpg",
-      "/workshops/30-nalla-malla-reddy-engineering-college/02.jpg",
-      "/workshops/30-nalla-malla-reddy-engineering-college/03.jpg",
-      "/workshops/30-nalla-malla-reddy-engineering-college/04.jpg",
+      "/images/workshops/30-nalla-malla-reddy-engineering-college/01.jpg",
+      "/images/workshops/30-nalla-malla-reddy-engineering-college/02.jpg",
+      "/images/workshops/30-nalla-malla-reddy-engineering-college/03.jpg",
+      "/images/workshops/30-nalla-malla-reddy-engineering-college/04.jpg",
     ],
   },
   {
@@ -505,9 +505,9 @@ export const workshops: Workshop[] = [
     attendees: 217,
     topics: ["Mobile Security", "Secure Coding"],
     photos: [
-      "/workshops/31-kakatiya-institute-of-technology-and-science/01.jpg",
-      "/workshops/31-kakatiya-institute-of-technology-and-science/02.jpg",
-      "/workshops/31-kakatiya-institute-of-technology-and-science/03.jpg",
+      "/images/workshops/31-kakatiya-institute-of-technology-and-science/01.jpg",
+      "/images/workshops/31-kakatiya-institute-of-technology-and-science/02.jpg",
+      "/images/workshops/31-kakatiya-institute-of-technology-and-science/03.jpg",
     ],
   },
   {
@@ -520,9 +520,9 @@ export const workshops: Workshop[] = [
     attendees: 53,
     topics: ["Cyber Law", "Data Privacy"],
     photos: [
-      "/workshops/32-sr-engineering-college/01.jpg",
-      "/workshops/32-sr-engineering-college/02.jpg",
-      "/workshops/32-sr-engineering-college/03.jpg",
+      "/images/workshops/32-sr-engineering-college/01.jpg",
+      "/images/workshops/32-sr-engineering-college/02.jpg",
+      "/images/workshops/32-sr-engineering-college/03.jpg",
     ],
   },
   {
@@ -535,9 +535,9 @@ export const workshops: Workshop[] = [
     attendees: 153,
     topics: ["Network Security", "Cryptography"],
     photos: [
-      "/workshops/33-vaagdevi-college-of-engineering/01.jpg",
-      "/workshops/33-vaagdevi-college-of-engineering/02.jpg",
-      "/workshops/33-vaagdevi-college-of-engineering/03.jpg",
+      "/images/workshops/33-vaagdevi-college-of-engineering/01.jpg",
+      "/images/workshops/33-vaagdevi-college-of-engineering/02.jpg",
+      "/images/workshops/33-vaagdevi-college-of-engineering/03.jpg",
     ],
   },
   {
@@ -550,10 +550,10 @@ export const workshops: Workshop[] = [
     attendees: 140,
     topics: ["Machine Learning", "AI Security"],
     photos: [
-      "/workshops/34-g-narayanamma-institute-of-technology-and-science/01.jpg",
-      "/workshops/34-g-narayanamma-institute-of-technology-and-science/02.jpg",
-      "/workshops/34-g-narayanamma-institute-of-technology-and-science/03.jpg",
-      "/workshops/34-g-narayanamma-institute-of-technology-and-science/04.jpg",
+      "/images/workshops/34-g-narayanamma-institute-of-technology-and-science/01.jpg",
+      "/images/workshops/34-g-narayanamma-institute-of-technology-and-science/02.jpg",
+      "/images/workshops/34-g-narayanamma-institute-of-technology-and-science/03.jpg",
+      "/images/workshops/34-g-narayanamma-institute-of-technology-and-science/04.jpg",
     ],
   },
   {
@@ -566,11 +566,11 @@ export const workshops: Workshop[] = [
     attendees: 74,
     topics: ["Network Security", "Cryptography"],
     photos: [
-      "/workshops/35-stanley-college-of-engineering-and-technology-for-women/01.jpg",
-      "/workshops/35-stanley-college-of-engineering-and-technology-for-women/02.jpg",
-      "/workshops/35-stanley-college-of-engineering-and-technology-for-women/03.jpg",
-      "/workshops/35-stanley-college-of-engineering-and-technology-for-women/04.jpg",
-      "/workshops/35-stanley-college-of-engineering-and-technology-for-women/05.jpg",
+      "/images/workshops/35-stanley-college-of-engineering-and-technology-for-women/01.jpg",
+      "/images/workshops/35-stanley-college-of-engineering-and-technology-for-women/02.jpg",
+      "/images/workshops/35-stanley-college-of-engineering-and-technology-for-women/03.jpg",
+      "/images/workshops/35-stanley-college-of-engineering-and-technology-for-women/04.jpg",
+      "/images/workshops/35-stanley-college-of-engineering-and-technology-for-women/05.jpg",
     ],
   },
   {
@@ -583,10 +583,10 @@ export const workshops: Workshop[] = [
     attendees: 184,
     topics: ["Ransomware Defense", "Incident Response"],
     photos: [
-      "/workshops/36-malla-reddy-institute-of-engineering-and-technology/01.jpg",
-      "/workshops/36-malla-reddy-institute-of-engineering-and-technology/02.jpg",
-      "/workshops/36-malla-reddy-institute-of-engineering-and-technology/03.jpg",
-      "/workshops/36-malla-reddy-institute-of-engineering-and-technology/04.jpg",
+      "/images/workshops/36-malla-reddy-institute-of-engineering-and-technology/01.jpg",
+      "/images/workshops/36-malla-reddy-institute-of-engineering-and-technology/02.jpg",
+      "/images/workshops/36-malla-reddy-institute-of-engineering-and-technology/03.jpg",
+      "/images/workshops/36-malla-reddy-institute-of-engineering-and-technology/04.jpg",
     ],
   },
   {
@@ -599,12 +599,12 @@ export const workshops: Workshop[] = [
     attendees: 187,
     topics: ["IoT Security", "AI Security"],
     photos: [
-      "/workshops/37-auroras-technological-and-research-institute/01.jpg",
-      "/workshops/37-auroras-technological-and-research-institute/02.jpg",
-      "/workshops/37-auroras-technological-and-research-institute/03.jpg",
-      "/workshops/37-auroras-technological-and-research-institute/04.jpg",
-      "/workshops/37-auroras-technological-and-research-institute/05.jpg",
-      "/workshops/37-auroras-technological-and-research-institute/06.jpg",
+      "/images/workshops/37-auroras-technological-and-research-institute/01.jpg",
+      "/images/workshops/37-auroras-technological-and-research-institute/02.jpg",
+      "/images/workshops/37-auroras-technological-and-research-institute/03.jpg",
+      "/images/workshops/37-auroras-technological-and-research-institute/04.jpg",
+      "/images/workshops/37-auroras-technological-and-research-institute/05.jpg",
+      "/images/workshops/37-auroras-technological-and-research-institute/06.jpg",
     ],
   },
   {
@@ -617,12 +617,12 @@ export const workshops: Workshop[] = [
     attendees: 121,
     topics: ["Machine Learning", "AI Security"],
     photos: [
-      "/workshops/38-mahatma-gandhi-institute-of-technology/01.jpg",
-      "/workshops/38-mahatma-gandhi-institute-of-technology/02.jpg",
-      "/workshops/38-mahatma-gandhi-institute-of-technology/03.jpg",
-      "/workshops/38-mahatma-gandhi-institute-of-technology/04.jpg",
-      "/workshops/38-mahatma-gandhi-institute-of-technology/05.jpg",
-      "/workshops/38-mahatma-gandhi-institute-of-technology/06.jpg",
+      "/images/workshops/38-mahatma-gandhi-institute-of-technology/01.jpg",
+      "/images/workshops/38-mahatma-gandhi-institute-of-technology/02.jpg",
+      "/images/workshops/38-mahatma-gandhi-institute-of-technology/03.jpg",
+      "/images/workshops/38-mahatma-gandhi-institute-of-technology/04.jpg",
+      "/images/workshops/38-mahatma-gandhi-institute-of-technology/05.jpg",
+      "/images/workshops/38-mahatma-gandhi-institute-of-technology/06.jpg",
     ],
   },
   {
@@ -635,10 +635,10 @@ export const workshops: Workshop[] = [
     attendees: 139,
     topics: ["Mobile Security", "Secure Coding"],
     photos: [
-      "/workshops/39-vignans-institute-of-management-and-technology-for-women/01.jpg",
-      "/workshops/39-vignans-institute-of-management-and-technology-for-women/02.jpg",
-      "/workshops/39-vignans-institute-of-management-and-technology-for-women/03.jpg",
-      "/workshops/39-vignans-institute-of-management-and-technology-for-women/04.jpg",
+      "/images/workshops/39-vignans-institute-of-management-and-technology-for-women/01.jpg",
+      "/images/workshops/39-vignans-institute-of-management-and-technology-for-women/02.jpg",
+      "/images/workshops/39-vignans-institute-of-management-and-technology-for-women/03.jpg",
+      "/images/workshops/39-vignans-institute-of-management-and-technology-for-women/04.jpg",
     ],
   },
   {
@@ -651,12 +651,12 @@ export const workshops: Workshop[] = [
     attendees: 180,
     topics: ["Ethical Hacking", "AI Security", "Industry-Academia Collaboration"],
     photos: [
-      "/workshops/40-sphoorthy-engineering-college/01.jpg",
-      "/workshops/40-sphoorthy-engineering-college/02.jpg",
-      "/workshops/40-sphoorthy-engineering-college/03.jpg",
-      "/workshops/40-sphoorthy-engineering-college/04.jpg",
-      "/workshops/40-sphoorthy-engineering-college/05.jpg",
-      "/workshops/40-sphoorthy-engineering-college/06.jpg",
+      "/images/workshops/40-sphoorthy-engineering-college/01.jpg",
+      "/images/workshops/40-sphoorthy-engineering-college/02.jpg",
+      "/images/workshops/40-sphoorthy-engineering-college/03.jpg",
+      "/images/workshops/40-sphoorthy-engineering-college/04.jpg",
+      "/images/workshops/40-sphoorthy-engineering-college/05.jpg",
+      "/images/workshops/40-sphoorthy-engineering-college/06.jpg",
     ],
   },
 ];

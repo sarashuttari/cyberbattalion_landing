@@ -1,7 +1,8 @@
 "use client";
 
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
+import { useDialogBehavior } from "@/hooks/useDialogBehavior";
 import ImageWithFallback from "./ImageWithFallback";
 
 type Props = {
@@ -13,9 +14,6 @@ type Props = {
   onClose: () => void;
 };
 
-const FOCUSABLE_SELECTOR =
-  'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
-
 export default function Lightbox({
   photos,
   initialIndex,
@@ -25,61 +23,17 @@ export default function Lightbox({
   onClose,
 }: Props) {
   const [index, setIndex] = useState(initialIndex);
-  const dialogRef = useRef<HTMLDivElement>(null);
   const total = photos.length;
 
   const goPrev = () => setIndex((i) => (i - 1 + total) % total);
   const goNext = () => setIndex((i) => (i + 1) % total);
 
-  useEffect(() => {
-    const previouslyFocused = document.activeElement as HTMLElement | null;
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    dialogRef.current?.focus();
-
-    function onKeyDown(e: KeyboardEvent) {
-      if (e.key === "Escape") {
-        e.preventDefault();
-        onClose();
-        return;
-      }
-      if (e.key === "ArrowLeft") {
-        e.preventDefault();
-        goPrev();
-        return;
-      }
-      if (e.key === "ArrowRight") {
-        e.preventDefault();
-        goNext();
-        return;
-      }
-      if (e.key === "Tab") {
-        const container = dialogRef.current;
-        if (!container) return;
-        const focusable = Array.from(
-          container.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR)
-        );
-        if (focusable.length === 0) return;
-        const first = focusable[0];
-        const last = focusable[focusable.length - 1];
-        if (e.shiftKey && document.activeElement === first) {
-          e.preventDefault();
-          last.focus();
-        } else if (!e.shiftKey && document.activeElement === last) {
-          e.preventDefault();
-          first.focus();
-        }
-      }
-    }
-
-    document.addEventListener("keydown", onKeyDown);
-    return () => {
-      document.removeEventListener("keydown", onKeyDown);
-      document.body.style.overflow = previousOverflow;
-      previouslyFocused?.focus();
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const dialogRef = useDialogBehavior<HTMLDivElement>({
+    active: true,
+    onClose,
+    onPrev: goPrev,
+    onNext: goNext,
+  });
 
   const photo = photos[index];
 

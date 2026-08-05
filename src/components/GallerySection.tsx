@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   galleryCategories,
   galleryPhotos,
@@ -9,9 +9,10 @@ import {
 import ImageWithFallback from "./ImageWithFallback";
 import Lightbox from "./Lightbox";
 
-const FALLBACK = "/gallery/_placeholder.svg";
+const FALLBACK = "/images/gallery/_placeholder.svg";
 const TABS = ["All", ...galleryCategories] as const;
 type Tab = (typeof TABS)[number];
+const PAGE_SIZE = 12;
 
 type Positioned = { photo: GalleryPhoto; index: number };
 
@@ -40,6 +41,7 @@ export default function GallerySection() {
   const [tab, setTab] = useState<Tab>("All");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [columnCount, setColumnCount] = useState(3);
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 639px)");
@@ -54,18 +56,19 @@ export default function GallerySection() {
       ? galleryPhotos
       : galleryPhotos.filter((p) => p.category === tab);
 
-  const positioned = useMemo<Positioned[]>(
-    () => filtered.map((photo, index) => ({ photo, index })),
-    [filtered]
-  );
-  const columns = useMemo(
-    () => distributeColumns(positioned, columnCount),
-    [positioned, columnCount]
-  );
+  const visible = filtered.slice(0, visibleCount);
+  const hasMore = visibleCount < filtered.length;
+
+  const positioned: Positioned[] = visible.map((photo, index) => ({
+    photo,
+    index,
+  }));
+  const columns = distributeColumns(positioned, columnCount);
 
   function selectTab(t: Tab) {
     setTab(t);
     setLightboxIndex(null);
+    setVisibleCount(PAGE_SIZE);
   }
 
   return (
@@ -104,30 +107,53 @@ export default function GallerySection() {
         ))}
       </div>
 
-      <div className="mx-auto mt-10 flex max-w-5xl gap-4">
-        {columns.map((column, colIdx) => (
-          <div key={colIdx} className="flex flex-1 flex-col gap-4">
-            {column.map(({ photo, index }) => (
-              <button
-                key={photo.id}
-                type="button"
-                onClick={() => setLightboxIndex(index)}
-                aria-label={`View gallery photo ${index + 1} of ${filtered.length}`}
-                className="block w-full overflow-hidden rounded-xl border border-navy/10 shadow-sm transition-shadow hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-maroon"
-              >
-                <ImageWithFallback
-                  src={photo.src}
-                  alt={photo.caption ?? ""}
-                  fallbackSrc={FALLBACK}
-                  width={photo.width}
-                  height={photo.height}
-                  className="h-auto w-full object-cover"
-                />
-              </button>
-            ))}
-          </div>
-        ))}
+      <div className="relative mx-auto mt-10 max-w-5xl">
+        <div
+          className={`flex gap-4 ${hasMore ? "max-h-[1400px] overflow-hidden" : ""}`}
+        >
+          {columns.map((column, colIdx) => (
+            <div key={colIdx} className="flex flex-1 flex-col gap-4">
+              {column.map(({ photo, index }) => (
+                <button
+                  key={photo.id}
+                  type="button"
+                  onClick={() => setLightboxIndex(index)}
+                  aria-label={`View gallery photo ${index + 1} of ${filtered.length}`}
+                  className="block w-full overflow-hidden rounded-xl border border-navy/10 shadow-sm transition-shadow hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-maroon"
+                >
+                  <ImageWithFallback
+                    src={photo.src}
+                    alt={photo.caption ?? ""}
+                    fallbackSrc={FALLBACK}
+                    width={photo.width}
+                    height={photo.height}
+                    className="h-auto w-full object-cover"
+                  />
+                </button>
+              ))}
+            </div>
+          ))}
+        </div>
+
+        {hasMore && (
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-bg to-transparent"
+          />
+        )}
       </div>
+
+      {hasMore && (
+        <div className="relative z-10 -mt-10 flex justify-center">
+          <button
+            type="button"
+            onClick={() => setVisibleCount((c) => c + PAGE_SIZE)}
+            className="rounded-full border border-navy/15 bg-white px-8 py-2.5 text-sm font-semibold text-navy shadow-sm transition-colors hover:border-maroon/40 hover:text-maroon"
+          >
+            Load More
+          </button>
+        </div>
+      )}
 
       {lightboxIndex !== null && (
         <Lightbox
