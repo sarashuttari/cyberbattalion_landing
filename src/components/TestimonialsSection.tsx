@@ -46,7 +46,7 @@ export default function TestimonialsSection() {
 
   return (
     <section id="testimonials" className="px-6 py-20 sm:py-28">
-      <div className="mx-auto max-w-5xl">
+      <div className="mx-auto max-w-6xl">
         <div className="text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gold-text">
             Expert Reviews
@@ -63,12 +63,12 @@ export default function TestimonialsSection() {
         <div className="relative mt-14">
           <ul
             ref={trackRef}
-            className="flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth px-6 pb-2 [-ms-overflow-style:none] [scrollbar-width:none] sm:px-[max(1.5rem,calc((100%-64rem)/2))] [&::-webkit-scrollbar]:hidden"
+            className="flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
             {testimonials.map((t) => (
               <li
                 key={t.id}
-                className="flex w-80 shrink-0 snap-center flex-col gap-4 rounded-2xl border border-navy/10 bg-white p-6 shadow-sm sm:w-96"
+                className="flex w-full sm:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)] shrink-0 snap-start flex-col gap-4 rounded-2xl border border-navy/10 bg-white p-6 shadow-sm"
               >
                 <Quote
                   size={22}
@@ -97,7 +97,7 @@ export default function TestimonialsSection() {
             type="button"
             onClick={() => goTo(Math.max(0, active - 1))}
             aria-label="Previous testimonial"
-            className="absolute left-1 top-1/2 hidden -translate-y-1/2 rounded-full bg-white p-2 text-navy shadow-md hover:text-maroon focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-maroon sm:flex"
+            className="absolute -left-4 top-1/2 hidden -translate-y-1/2 rounded-full bg-white p-2 text-navy shadow-md hover:text-maroon focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-maroon sm:flex"
           >
             <ChevronLeft size={20} />
           </button>
@@ -105,7 +105,7 @@ export default function TestimonialsSection() {
             type="button"
             onClick={() => goTo(Math.min(testimonials.length - 1, active + 1))}
             aria-label="Next testimonial"
-            className="absolute right-1 top-1/2 hidden -translate-y-1/2 rounded-full bg-white p-2 text-navy shadow-md hover:text-maroon focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-maroon sm:flex"
+            className="absolute -right-4 top-1/2 hidden -translate-y-1/2 rounded-full bg-white p-2 text-navy shadow-md hover:text-maroon focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-maroon sm:flex"
           >
             <ChevronRight size={20} />
           </button>

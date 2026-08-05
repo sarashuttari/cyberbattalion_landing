@@ -2,6 +2,7 @@ import AnnouncementMarquee from "@/components/AnnouncementMarquee";
 import CentreOfExcellence from "@/components/CentreOfExcellence";
 import Collaborations from "@/components/Collaborations";
 import ContactSection from "@/components/ContactSection";
+import EventRegistrationCTA from "@/components/EventRegistrationCTA";
 import GallerySection from "@/components/GallerySection";
 import Hero from "@/components/Hero";
 import Highlights from "@/components/Highlights";
@@ -16,6 +17,7 @@ export default function Home() {
       <WelcomeModal />
       <AnnouncementMarquee />
       <Hero />
+      <EventRegistrationCTA />
       <Collaborations />
       <Highlights />
       <SeminarsSection />

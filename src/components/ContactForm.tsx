@@ -1,6 +1,6 @@
 "use client";
 
-import { AlertCircle, CheckCircle2, Loader2, Send } from "lucide-react";
+import { AlertCircle, CheckCircle2, ChevronDown, Loader2, Mail, MessageSquare, Phone, Send, User } from "lucide-react";
 import { useState, type FormEvent } from "react";
 
 const FALLBACK_EMAIL = "info@cyberbattalion.in";
@@ -15,7 +15,7 @@ const reasons = [
 ];
 
 const inputClass =
-  "w-full rounded-lg border border-navy/15 bg-bg px-4 py-2.5 text-sm text-navy placeholder:text-muted focus:border-maroon focus:outline-none focus:ring-1 focus:ring-maroon";
+  "w-full rounded-xl border border-navy/15 bg-bg/80 px-4 py-3 text-sm text-navy placeholder:text-muted transition-colors focus:border-maroon focus:bg-white focus:outline-none focus:ring-2 focus:ring-maroon/20";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -61,21 +61,22 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
-      <div className="grid gap-5 sm:grid-cols-2">
+    <form onSubmit={handleSubmit} className="space-y-6">
+      <div className="grid gap-6 sm:grid-cols-2">
         <div>
           <label
             htmlFor="name"
-            className="mb-1.5 block text-sm font-medium text-navy"
+            className="mb-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-navy/80"
           >
-            Name
+            <User size={14} className="text-maroon" />
+            <span>Your Name <span className="text-maroon">*</span></span>
           </label>
           <input
             id="name"
             name="name"
             type="text"
             required
-            placeholder="Your full name"
+            placeholder="e.g. Dr. Ramesh Kumar"
             className={inputClass}
           />
         </div>
@@ -83,34 +84,36 @@ export default function ContactForm() {
         <div>
           <label
             htmlFor="email"
-            className="mb-1.5 block text-sm font-medium text-navy"
+            className="mb-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-navy/80"
           >
-            Email
+            <Mail size={14} className="text-maroon" />
+            <span>Email Address <span className="text-maroon">*</span></span>
           </label>
           <input
             id="email"
             name="email"
             type="email"
             required
-            placeholder="you@example.com"
+            placeholder="you@institution.edu"
             className={inputClass}
           />
         </div>
       </div>
 
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid gap-6 sm:grid-cols-2">
         <div>
           <label
             htmlFor="phone"
-            className="mb-1.5 block text-sm font-medium text-navy"
+            className="mb-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-navy/80"
           >
-            Phone <span className="text-muted">(optional)</span>
+            <Phone size={14} className="text-maroon" />
+            <span>Phone Number <span className="text-muted font-normal text-[11px]">(optional)</span></span>
           </label>
           <input
             id="phone"
             name="phone"
             type="tel"
-            placeholder="+91 XXXXX XXXXX"
+            placeholder="+91 98765 43210"
             className={inputClass}
           />
         </div>
@@ -118,78 +121,86 @@ export default function ContactForm() {
         <div>
           <label
             htmlFor="reason"
-            className="mb-1.5 block text-sm font-medium text-navy"
+            className="mb-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-navy/80"
           >
-            Reason for contact
+            <MessageSquare size={14} className="text-maroon" />
+            <span>Reason for Contact <span className="text-maroon">*</span></span>
           </label>
-          <select
-            id="reason"
-            name="reason"
-            required
-            defaultValue=""
-            className={inputClass}
-          >
-            <option value="" disabled>
-              Select one...
-            </option>
-            {reasons.map((r) => (
-              <option key={r} value={r}>
-                {r}
+          <div className="relative">
+            <select
+              id="reason"
+              name="reason"
+              required
+              defaultValue=""
+              className={`${inputClass} appearance-none pr-10`}
+            >
+              <option value="" disabled>
+                Select inquiry topic...
               </option>
-            ))}
-          </select>
+              {reasons.map((r) => (
+                <option key={r} value={r}>
+                  {r}
+                </option>
+              ))}
+            </select>
+            <ChevronDown
+              size={16}
+              className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-navy/50"
+            />
+          </div>
         </div>
       </div>
 
       <div>
         <label
           htmlFor="message"
-          className="mb-1.5 block text-sm font-medium text-navy"
+          className="mb-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-navy/80"
         >
-          Message
+          <MessageSquare size={14} className="text-maroon" />
+          <span>Your Message <span className="text-maroon">*</span></span>
         </label>
         <textarea
           id="message"
           name="message"
           required
           rows={5}
-          placeholder="Tell us a bit about your query..."
+          placeholder="Please describe your workshop request, collaboration proposal, or general query..."
           className={`${inputClass} resize-y`}
         />
       </div>
 
-      <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between border-t border-navy/10 pt-4">
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="inline-flex items-center gap-2 rounded-full bg-maroon px-8 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-maroon-dark disabled:cursor-not-allowed disabled:opacity-60"
+          className="inline-flex items-center gap-2.5 rounded-full bg-maroon px-8 py-3.5 text-sm font-bold text-white shadow-md shadow-maroon/20 transition-all hover:bg-maroon-dark hover:shadow-lg hover:shadow-maroon/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-maroon disabled:cursor-not-allowed disabled:opacity-60"
         >
           {status === "submitting" ? (
-            <Loader2 size={16} className="animate-spin" aria-hidden="true" />
+            <Loader2 size={18} className="animate-spin" aria-hidden="true" />
           ) : (
-            <Send size={16} aria-hidden="true" />
+            <Send size={18} aria-hidden="true" />
           )}
-          {status === "submitting" ? "Sending..." : "Send Message"}
+          <span>{status === "submitting" ? "Submitting..." : "Send Message"}</span>
         </button>
 
         {status === "success" && (
-          <p
+          <div
             role="status"
-            className="inline-flex items-center gap-1.5 text-sm text-navy/80"
+            className="inline-flex items-center gap-2 rounded-xl bg-green-50 border border-green-200 px-4 py-2 text-sm text-green-800"
           >
-            <CheckCircle2 size={16} className="text-maroon" aria-hidden="true" />
-            Message sent — we&rsquo;ll get back to you soon.
-          </p>
+            <CheckCircle2 size={18} className="text-green-600 shrink-0" aria-hidden="true" />
+            <span>Message sent — we&rsquo;ll respond within 24 hours.</span>
+          </div>
         )}
 
         {status === "error" && (
-          <p
+          <div
             role="alert"
-            className="inline-flex items-center gap-1.5 text-sm text-navy/80"
+            className="inline-flex items-center gap-2 rounded-xl bg-red-50 border border-red-200 px-4 py-2 text-sm text-red-800"
           >
-            <AlertCircle size={16} className="text-maroon" aria-hidden="true" />
-            {errorMessage}
-          </p>
+            <AlertCircle size={18} className="text-red-600 shrink-0" aria-hidden="true" />
+            <span>{errorMessage}</span>
+          </div>
         )}
       </div>
     </form>

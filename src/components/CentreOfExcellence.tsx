@@ -4,9 +4,16 @@ export default function CentreOfExcellence() {
   return (
     <section
       id="centre-of-excellence"
-      className="w-full bg-navy px-6 py-20 text-white sm:py-28"
+      className="relative w-full overflow-hidden bg-navy px-6 py-20 text-white sm:py-28"
     >
-      <div className="mx-auto grid max-w-5xl grid-cols-1 gap-12 md:grid-cols-[1fr_auto_1fr] md:gap-10">
+      {/* Background SVG pattern */}
+      <div
+        className="pointer-events-none absolute inset-0 bg-cover bg-center bg-no-repeat opacity-15 mix-blend-screen"
+        style={{ backgroundImage: "url('/bg.svg')" }}
+        aria-hidden="true"
+      />
+
+      <div className="relative z-10 mx-auto grid max-w-5xl grid-cols-1 gap-12 md:grid-cols-[1fr_auto_1fr] md:gap-10">
         <div className="border-t border-gold/30 pt-8 md:border-t-0 md:pt-0">
           <span className="flex h-11 w-11 items-center justify-center rounded-full bg-gold/15 text-gold">
             <ShieldCheck size={20} aria-hidden="true" />

@@ -17,10 +17,8 @@ export default function WelcomeModal() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    if (sessionStorage.getItem(SESSION_KEY)) return;
     const timer = setTimeout(() => {
       setOpen(true);
-      sessionStorage.setItem(SESSION_KEY, "1");
     }, DELAY_MS);
     return () => clearTimeout(timer);
   }, []);

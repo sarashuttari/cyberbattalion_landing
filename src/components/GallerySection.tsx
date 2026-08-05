@@ -108,9 +108,7 @@ export default function GallerySection() {
       </div>
 
       <div className="relative mx-auto mt-10 max-w-5xl">
-        <div
-          className={`flex gap-4 ${hasMore ? "max-h-[1400px] overflow-hidden" : ""}`}
-        >
+        <div className="flex gap-4">
           {columns.map((column, colIdx) => (
             <div key={colIdx} className="flex flex-1 flex-col gap-4">
               {column.map(({ photo, index }) => (
@@ -134,17 +132,10 @@ export default function GallerySection() {
             </div>
           ))}
         </div>
-
-        {hasMore && (
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-bg to-transparent"
-          />
-        )}
       </div>
 
       {hasMore && (
-        <div className="relative z-10 -mt-10 flex justify-center">
+        <div className="mt-10 flex justify-center">
           <button
             type="button"
             onClick={() => setVisibleCount((c) => c + PAGE_SIZE)}

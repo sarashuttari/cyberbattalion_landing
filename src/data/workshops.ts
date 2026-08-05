@@ -22,12 +22,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 144,
     topics: ["Career Guidance", "Industry-Academia Collaboration"],
-    photos: [
-      "/images/workshops/01-cmr-college-of-engineering-and-technology/01.jpg",
-      "/images/workshops/01-cmr-college-of-engineering-and-technology/02.jpg",
-      "/images/workshops/01-cmr-college-of-engineering-and-technology/03.jpg",
-      "/images/workshops/01-cmr-college-of-engineering-and-technology/04.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w02",
@@ -38,11 +33,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 170,
     topics: ["Digital Forensics", "Incident Response"],
-    photos: [
-      "/images/workshops/02-cmr-institute-of-technology/01.jpg",
-      "/images/workshops/02-cmr-institute-of-technology/02.jpg",
-      "/images/workshops/02-cmr-institute-of-technology/03.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w03",
@@ -53,14 +44,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 103,
     topics: ["Bug Bounty", "Ethical Hacking"],
-    photos: [
-      "/images/workshops/03-cmr-engineering-college/01.jpg",
-      "/images/workshops/03-cmr-engineering-college/02.jpg",
-      "/images/workshops/03-cmr-engineering-college/03.jpg",
-      "/images/workshops/03-cmr-engineering-college/04.jpg",
-      "/images/workshops/03-cmr-engineering-college/05.jpg",
-      "/images/workshops/03-cmr-engineering-college/06.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w04",
@@ -71,11 +55,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 65,
     topics: ["Social Engineering", "Cyber Law"],
-    photos: [
-      "/images/workshops/04-vardhaman-college-of-engineering/01.jpg",
-      "/images/workshops/04-vardhaman-college-of-engineering/02.jpg",
-      "/images/workshops/04-vardhaman-college-of-engineering/03.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w05",
@@ -86,12 +66,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 109,
     topics: ["Cyber Law", "Career Guidance"],
-    photos: [
-      "/images/workshops/05-vasavi-college-of-engineering/01.jpg",
-      "/images/workshops/05-vasavi-college-of-engineering/02.jpg",
-      "/images/workshops/05-vasavi-college-of-engineering/03.jpg",
-      "/images/workshops/05-vasavi-college-of-engineering/04.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w06",
@@ -102,12 +77,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 177,
     topics: ["Secure Coding", "OWASP Top 10"],
-    photos: [
-      "/images/workshops/06-chaitanya-bharathi-institute-of-technology/01.jpg",
-      "/images/workshops/06-chaitanya-bharathi-institute-of-technology/02.jpg",
-      "/images/workshops/06-chaitanya-bharathi-institute-of-technology/03.jpg",
-      "/images/workshops/06-chaitanya-bharathi-institute-of-technology/04.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w07",
@@ -118,14 +88,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 175,
     topics: ["Mobile Security", "Secure Coding"],
-    photos: [
-      "/images/workshops/07-mvsr-engineering-college/01.jpg",
-      "/images/workshops/07-mvsr-engineering-college/02.jpg",
-      "/images/workshops/07-mvsr-engineering-college/03.jpg",
-      "/images/workshops/07-mvsr-engineering-college/04.jpg",
-      "/images/workshops/07-mvsr-engineering-college/05.jpg",
-      "/images/workshops/07-mvsr-engineering-college/06.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w08",
@@ -136,11 +99,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 195,
     topics: ["Cryptography", "Network Security"],
-    photos: [
-      "/images/workshops/08-vnr-vignana-jyothi-institute-of-engineering-and-technology/01.jpg",
-      "/images/workshops/08-vnr-vignana-jyothi-institute-of-engineering-and-technology/02.jpg",
-      "/images/workshops/08-vnr-vignana-jyothi-institute-of-engineering-and-technology/03.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w09",
@@ -151,14 +110,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 123,
     topics: ["AI Security", "Machine Learning"],
-    photos: [
-      "/images/workshops/09-gokaraju-rangaraju-institute-of-engineering-and-technology/01.jpg",
-      "/images/workshops/09-gokaraju-rangaraju-institute-of-engineering-and-technology/02.jpg",
-      "/images/workshops/09-gokaraju-rangaraju-institute-of-engineering-and-technology/03.jpg",
-      "/images/workshops/09-gokaraju-rangaraju-institute-of-engineering-and-technology/04.jpg",
-      "/images/workshops/09-gokaraju-rangaraju-institute-of-engineering-and-technology/05.jpg",
-      "/images/workshops/09-gokaraju-rangaraju-institute-of-engineering-and-technology/06.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w10",
@@ -169,12 +121,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 144,
     topics: ["Cyber Law", "Career Guidance"],
-    photos: [
-      "/images/workshops/10-anurag-university/01.jpg",
-      "/images/workshops/10-anurag-university/02.jpg",
-      "/images/workshops/10-anurag-university/03.jpg",
-      "/images/workshops/10-anurag-university/04.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w11",
@@ -185,14 +132,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 97,
     topics: ["AI Security", "Machine Learning"],
-    photos: [
-      "/images/workshops/11-malla-reddy-engineering-college/01.jpg",
-      "/images/workshops/11-malla-reddy-engineering-college/02.jpg",
-      "/images/workshops/11-malla-reddy-engineering-college/03.jpg",
-      "/images/workshops/11-malla-reddy-engineering-college/04.jpg",
-      "/images/workshops/11-malla-reddy-engineering-college/05.jpg",
-      "/images/workshops/11-malla-reddy-engineering-college/06.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w12",
@@ -203,11 +143,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 173,
     topics: ["Mobile Security", "Secure Coding"],
-    photos: [
-      "/images/workshops/12-malla-reddy-college-of-engineering-and-technology/01.jpg",
-      "/images/workshops/12-malla-reddy-college-of-engineering-and-technology/02.jpg",
-      "/images/workshops/12-malla-reddy-college-of-engineering-and-technology/03.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w13",
@@ -218,11 +154,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 162,
     topics: ["Machine Learning", "AI Security"],
-    photos: [
-      "/images/workshops/13-sreenidhi-institute-of-science-and-technology/01.jpg",
-      "/images/workshops/13-sreenidhi-institute-of-science-and-technology/02.jpg",
-      "/images/workshops/13-sreenidhi-institute-of-science-and-technology/03.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w14",
@@ -233,11 +165,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 133,
     topics: ["AI Security", "Machine Learning"],
-    photos: [
-      "/images/workshops/14-sreyas-institute-of-engineering-and-technology/01.jpg",
-      "/images/workshops/14-sreyas-institute-of-engineering-and-technology/02.jpg",
-      "/images/workshops/14-sreyas-institute-of-engineering-and-technology/03.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w15",
@@ -248,11 +176,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 108,
     topics: ["CTF", "Ethical Hacking"],
-    photos: [
-      "/images/workshops/15-guru-nanak-institutions-technical-campus/01.jpg",
-      "/images/workshops/15-guru-nanak-institutions-technical-campus/02.jpg",
-      "/images/workshops/15-guru-nanak-institutions-technical-campus/03.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w16",
@@ -263,12 +187,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 60,
     topics: ["Cyber Law", "Career Guidance"],
-    photos: [
-      "/images/workshops/16-keshav-memorial-institute-of-technology/01.jpg",
-      "/images/workshops/16-keshav-memorial-institute-of-technology/02.jpg",
-      "/images/workshops/16-keshav-memorial-institute-of-technology/03.jpg",
-      "/images/workshops/16-keshav-memorial-institute-of-technology/04.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w17",
@@ -279,12 +198,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 99,
     topics: ["Bug Bounty", "Ethical Hacking"],
-    photos: [
-      "/images/workshops/17-vignan-institute-of-technology-and-science/01.jpg",
-      "/images/workshops/17-vignan-institute-of-technology-and-science/02.jpg",
-      "/images/workshops/17-vignan-institute-of-technology-and-science/03.jpg",
-      "/images/workshops/17-vignan-institute-of-technology-and-science/04.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w18",
@@ -295,12 +209,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 153,
     topics: ["OWASP Top 10", "Secure Coding"],
-    photos: [
-      "/images/workshops/18-geethanjali-college-of-engineering-and-technology/01.jpg",
-      "/images/workshops/18-geethanjali-college-of-engineering-and-technology/02.jpg",
-      "/images/workshops/18-geethanjali-college-of-engineering-and-technology/03.jpg",
-      "/images/workshops/18-geethanjali-college-of-engineering-and-technology/04.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w19",
@@ -311,12 +220,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 113,
     topics: ["Career Guidance", "Ethical Hacking"],
-    photos: [
-      "/images/workshops/19-st-martins-engineering-college/01.jpg",
-      "/images/workshops/19-st-martins-engineering-college/02.jpg",
-      "/images/workshops/19-st-martins-engineering-college/03.jpg",
-      "/images/workshops/19-st-martins-engineering-college/04.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w20",
@@ -327,11 +231,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 161,
     topics: ["AI Security", "Machine Learning"],
-    photos: [
-      "/images/workshops/20-tkr-college-of-engineering-and-technology/01.jpg",
-      "/images/workshops/20-tkr-college-of-engineering-and-technology/02.jpg",
-      "/images/workshops/20-tkr-college-of-engineering-and-technology/03.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w21",
@@ -342,14 +242,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 90,
     topics: ["Ransomware Defense", "Incident Response"],
-    photos: [
-      "/images/workshops/21-mlr-institute-of-technology/01.jpg",
-      "/images/workshops/21-mlr-institute-of-technology/02.jpg",
-      "/images/workshops/21-mlr-institute-of-technology/03.jpg",
-      "/images/workshops/21-mlr-institute-of-technology/04.jpg",
-      "/images/workshops/21-mlr-institute-of-technology/05.jpg",
-      "/images/workshops/21-mlr-institute-of-technology/06.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w22",
@@ -360,12 +253,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 98,
     topics: ["CTF", "Ethical Hacking"],
-    photos: [
-      "/images/workshops/22-muffakham-jah-college-of-engineering-and-technology/01.jpg",
-      "/images/workshops/22-muffakham-jah-college-of-engineering-and-technology/02.jpg",
-      "/images/workshops/22-muffakham-jah-college-of-engineering-and-technology/03.jpg",
-      "/images/workshops/22-muffakham-jah-college-of-engineering-and-technology/04.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w23",
@@ -376,11 +264,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 132,
     topics: ["Mobile Security", "Secure Coding"],
-    photos: [
-      "/images/workshops/23-ace-engineering-college/01.jpg",
-      "/images/workshops/23-ace-engineering-college/02.jpg",
-      "/images/workshops/23-ace-engineering-college/03.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w24",
@@ -391,11 +275,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 54,
     topics: ["Digital Forensics", "Incident Response"],
-    photos: [
-      "/images/workshops/24-institute-of-aeronautical-engineering/01.jpg",
-      "/images/workshops/24-institute-of-aeronautical-engineering/02.jpg",
-      "/images/workshops/24-institute-of-aeronautical-engineering/03.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w25",
@@ -406,11 +286,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 161,
     topics: ["Social Engineering", "Cyber Law"],
-    photos: [
-      "/images/workshops/25-cvr-college-of-engineering/01.jpg",
-      "/images/workshops/25-cvr-college-of-engineering/02.jpg",
-      "/images/workshops/25-cvr-college-of-engineering/03.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w26",
@@ -421,12 +297,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 196,
     topics: ["OWASP Top 10", "Secure Coding"],
-    photos: [
-      "/images/workshops/26-jntuh-college-of-engineering-hyderabad/01.jpg",
-      "/images/workshops/26-jntuh-college-of-engineering-hyderabad/02.jpg",
-      "/images/workshops/26-jntuh-college-of-engineering-hyderabad/03.jpg",
-      "/images/workshops/26-jntuh-college-of-engineering-hyderabad/04.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w27",
@@ -437,14 +308,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 177,
     topics: ["Career Guidance", "Ethical Hacking"],
-    photos: [
-      "/images/workshops/27-osmania-university-college-of-engineering/01.jpg",
-      "/images/workshops/27-osmania-university-college-of-engineering/02.jpg",
-      "/images/workshops/27-osmania-university-college-of-engineering/03.jpg",
-      "/images/workshops/27-osmania-university-college-of-engineering/04.jpg",
-      "/images/workshops/27-osmania-university-college-of-engineering/05.jpg",
-      "/images/workshops/27-osmania-university-college-of-engineering/06.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w28",
@@ -455,11 +319,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 216,
     topics: ["Bug Bounty", "Ethical Hacking"],
-    photos: [
-      "/images/workshops/28-b-v-raju-institute-of-technology/01.jpg",
-      "/images/workshops/28-b-v-raju-institute-of-technology/02.jpg",
-      "/images/workshops/28-b-v-raju-institute-of-technology/03.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w29",
@@ -470,14 +330,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 99,
     topics: ["Secure Coding", "OWASP Top 10"],
-    photos: [
-      "/images/workshops/29-vignana-bharathi-institute-of-technology/01.jpg",
-      "/images/workshops/29-vignana-bharathi-institute-of-technology/02.jpg",
-      "/images/workshops/29-vignana-bharathi-institute-of-technology/03.jpg",
-      "/images/workshops/29-vignana-bharathi-institute-of-technology/04.jpg",
-      "/images/workshops/29-vignana-bharathi-institute-of-technology/05.jpg",
-      "/images/workshops/29-vignana-bharathi-institute-of-technology/06.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w30",
@@ -488,12 +341,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 180,
     topics: ["IoT Security", "Network Security"],
-    photos: [
-      "/images/workshops/30-nalla-malla-reddy-engineering-college/01.jpg",
-      "/images/workshops/30-nalla-malla-reddy-engineering-college/02.jpg",
-      "/images/workshops/30-nalla-malla-reddy-engineering-college/03.jpg",
-      "/images/workshops/30-nalla-malla-reddy-engineering-college/04.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w31",
@@ -504,11 +352,7 @@ export const workshops: Workshop[] = [
     location: "Warangal, Telangana",
     attendees: 217,
     topics: ["Mobile Security", "Secure Coding"],
-    photos: [
-      "/images/workshops/31-kakatiya-institute-of-technology-and-science/01.jpg",
-      "/images/workshops/31-kakatiya-institute-of-technology-and-science/02.jpg",
-      "/images/workshops/31-kakatiya-institute-of-technology-and-science/03.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w32",
@@ -519,11 +363,7 @@ export const workshops: Workshop[] = [
     location: "Warangal, Telangana",
     attendees: 53,
     topics: ["Cyber Law", "Data Privacy"],
-    photos: [
-      "/images/workshops/32-sr-engineering-college/01.jpg",
-      "/images/workshops/32-sr-engineering-college/02.jpg",
-      "/images/workshops/32-sr-engineering-college/03.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w33",
@@ -534,11 +374,7 @@ export const workshops: Workshop[] = [
     location: "Warangal, Telangana",
     attendees: 153,
     topics: ["Network Security", "Cryptography"],
-    photos: [
-      "/images/workshops/33-vaagdevi-college-of-engineering/01.jpg",
-      "/images/workshops/33-vaagdevi-college-of-engineering/02.jpg",
-      "/images/workshops/33-vaagdevi-college-of-engineering/03.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w34",
@@ -549,12 +385,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 140,
     topics: ["Machine Learning", "AI Security"],
-    photos: [
-      "/images/workshops/34-g-narayanamma-institute-of-technology-and-science/01.jpg",
-      "/images/workshops/34-g-narayanamma-institute-of-technology-and-science/02.jpg",
-      "/images/workshops/34-g-narayanamma-institute-of-technology-and-science/03.jpg",
-      "/images/workshops/34-g-narayanamma-institute-of-technology-and-science/04.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w35",
@@ -565,13 +396,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 74,
     topics: ["Network Security", "Cryptography"],
-    photos: [
-      "/images/workshops/35-stanley-college-of-engineering-and-technology-for-women/01.jpg",
-      "/images/workshops/35-stanley-college-of-engineering-and-technology-for-women/02.jpg",
-      "/images/workshops/35-stanley-college-of-engineering-and-technology-for-women/03.jpg",
-      "/images/workshops/35-stanley-college-of-engineering-and-technology-for-women/04.jpg",
-      "/images/workshops/35-stanley-college-of-engineering-and-technology-for-women/05.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w36",
@@ -582,12 +407,7 @@ export const workshops: Workshop[] = [
     location: "Secunderabad, Telangana",
     attendees: 184,
     topics: ["Ransomware Defense", "Incident Response"],
-    photos: [
-      "/images/workshops/36-malla-reddy-institute-of-engineering-and-technology/01.jpg",
-      "/images/workshops/36-malla-reddy-institute-of-engineering-and-technology/02.jpg",
-      "/images/workshops/36-malla-reddy-institute-of-engineering-and-technology/03.jpg",
-      "/images/workshops/36-malla-reddy-institute-of-engineering-and-technology/04.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w37",
@@ -598,14 +418,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 187,
     topics: ["IoT Security", "AI Security"],
-    photos: [
-      "/images/workshops/37-auroras-technological-and-research-institute/01.jpg",
-      "/images/workshops/37-auroras-technological-and-research-institute/02.jpg",
-      "/images/workshops/37-auroras-technological-and-research-institute/03.jpg",
-      "/images/workshops/37-auroras-technological-and-research-institute/04.jpg",
-      "/images/workshops/37-auroras-technological-and-research-institute/05.jpg",
-      "/images/workshops/37-auroras-technological-and-research-institute/06.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w38",
@@ -616,14 +429,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 121,
     topics: ["Machine Learning", "AI Security"],
-    photos: [
-      "/images/workshops/38-mahatma-gandhi-institute-of-technology/01.jpg",
-      "/images/workshops/38-mahatma-gandhi-institute-of-technology/02.jpg",
-      "/images/workshops/38-mahatma-gandhi-institute-of-technology/03.jpg",
-      "/images/workshops/38-mahatma-gandhi-institute-of-technology/04.jpg",
-      "/images/workshops/38-mahatma-gandhi-institute-of-technology/05.jpg",
-      "/images/workshops/38-mahatma-gandhi-institute-of-technology/06.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w39",
@@ -634,12 +440,7 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 139,
     topics: ["Mobile Security", "Secure Coding"],
-    photos: [
-      "/images/workshops/39-vignans-institute-of-management-and-technology-for-women/01.jpg",
-      "/images/workshops/39-vignans-institute-of-management-and-technology-for-women/02.jpg",
-      "/images/workshops/39-vignans-institute-of-management-and-technology-for-women/03.jpg",
-      "/images/workshops/39-vignans-institute-of-management-and-technology-for-women/04.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
   {
     id: "w40",
@@ -650,13 +451,6 @@ export const workshops: Workshop[] = [
     location: "Hyderabad, Telangana",
     attendees: 180,
     topics: ["Ethical Hacking", "AI Security", "Industry-Academia Collaboration"],
-    photos: [
-      "/images/workshops/40-sphoorthy-engineering-college/01.jpg",
-      "/images/workshops/40-sphoorthy-engineering-college/02.jpg",
-      "/images/workshops/40-sphoorthy-engineering-college/03.jpg",
-      "/images/workshops/40-sphoorthy-engineering-college/04.jpg",
-      "/images/workshops/40-sphoorthy-engineering-college/05.jpg",
-      "/images/workshops/40-sphoorthy-engineering-college/06.jpg",
-    ],
+    photos: ["/images/workshops/_placeholder.svg"],
   },
 ];
